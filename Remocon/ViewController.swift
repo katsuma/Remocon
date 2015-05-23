@@ -10,16 +10,47 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Properties -
+    lazy private var button:UIButton = self.createChannelButton()
+
+    // MARK: - Life cycle events -
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.view.addSubview(button)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        self.layoutChannelButton()
     }
 
+    // MARK: - Create subviews -
+    private func createChannelButton() -> UIButton {
+        let button = UIButton(frame: CGRectZero)
+        return button
+    }
 
+    // MARK: - Layout subviews -
+    private func layoutChannelButton() {
+        button.setTitle("1", forState: UIControlState.Normal)
+        button.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+        button.setTitle("1", forState: UIControlState.Highlighted)
+        button.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+
+        button.frame = CGRectMake(0, 0, 50, 50)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.layer.position = CGPoint(x: self.view.frame.width/2, y: 200)
+        button.layer.borderWidth = 0.5
+
+        button.tag = 1
+        button.addTarget(self, action: "onClickButton:", forControlEvents: .TouchUpInside)
+    }
+
+    func onClickButton(sender: UIButton) {
+        println("clicked \(sender.tag)")
+    }
 }
 

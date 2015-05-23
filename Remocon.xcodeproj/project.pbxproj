@@ -13,6 +13,7 @@
 		16EFD0601B105A7F00EB13DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD05F1B105A7F00EB13DA /* Images.xcassets */; };
 		16EFD0631B105A7F00EB13DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */; };
 		16EFD06F1B105A7F00EB13DA /* RemoconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD06E1B105A7F00EB13DA /* RemoconTests.swift */; };
+		16EFD0791B10638F00EB13DA /* RemoconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0781B10638F00EB13DA /* RemoconButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		16EFD0681B105A7F00EB13DA /* RemoconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EFD06D1B105A7F00EB13DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EFD06E1B105A7F00EB13DA /* RemoconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoconTests.swift; sourceTree = "<group>"; };
+		16EFD0781B10638F00EB13DA /* RemoconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoconButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				16EFD0581B105A7F00EB13DA /* AppDelegate.swift */,
 				16EFD05A1B105A7F00EB13DA /* ViewController.swift */,
+				16EFD0781B10638F00EB13DA /* RemoconButton.swift */,
 				16EFD05C1B105A7F00EB13DA /* Main.storyboard */,
 				16EFD05F1B105A7F00EB13DA /* Images.xcassets */,
 				16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EFD0791B10638F00EB13DA /* RemoconButton.swift in Sources */,
 				16EFD05B1B105A7F00EB13DA /* ViewController.swift in Sources */,
 				16EFD0591B105A7F00EB13DA /* AppDelegate.swift in Sources */,
 			);

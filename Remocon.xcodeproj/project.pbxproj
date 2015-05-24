@@ -16,6 +16,7 @@
 		16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07A1B10C64900EB13DA /* ChannelButton.swift */; };
 		16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */; };
 		16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */; };
+		16EFD0831B12167900EB13DA /* ChannelContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0821B12167900EB13DA /* ChannelContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		16EFD07A1B10C64900EB13DA /* ChannelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelButton.swift; sourceTree = "<group>"; };
 		16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LigatureSymbols-2.11.ttf"; sourceTree = "<group>"; };
 		16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
+		16EFD0821B12167900EB13DA /* ChannelContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +87,14 @@
 			children = (
 				16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */,
 				16EFD0581B105A7F00EB13DA /* AppDelegate.swift */,
+				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
+				16EFD0821B12167900EB13DA /* ChannelContainerView.swift */,
+				16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */,
 				16EFD05A1B105A7F00EB13DA /* ViewController.swift */,
 				16EFD05C1B105A7F00EB13DA /* Main.storyboard */,
 				16EFD05F1B105A7F00EB13DA /* Images.xcassets */,
 				16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */,
 				16EFD0561B105A7F00EB13DA /* Supporting Files */,
-				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
-				16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */,
 			);
 			path = Remocon;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EFD05B1B105A7F00EB13DA /* ViewController.swift in Sources */,
+				16EFD0831B12167900EB13DA /* ChannelContainerView.swift in Sources */,
 				16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */,
 				16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */,
 				16EFD0591B105A7F00EB13DA /* AppDelegate.swift in Sources */,

@@ -29,13 +29,12 @@ class ChannelButton: UIButton {
 
     // MARKL: - Layout view -
     private func layoutButton() {
+        self.titleLabel!.font = UIFont(name: "LigatureSymbols", size: 14)
         self.setTitle(label, forState: UIControlState.Normal)
         self.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
         self.setTitle(label, forState: UIControlState.Highlighted)
         self.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
 
-        //self.frame = CGRectMake(0, 0, 50, 50)
-        //self.layer.position = CGPoint(x: self.frame.width/2, y: 200)
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
         self.layer.borderWidth = 0.5

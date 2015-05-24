@@ -21,8 +21,9 @@ class ViewController: UIViewController {
         ["label": "7", "channel": "7"],
         ["label": "8", "channel": "8"],
         ["label": "9", "channel": "9"],
-        ["label": "▲", "channel": "10"],
-        ["label": "▼", "channel": "11"]
+        ["label": "volumedown", "channel": "10"],
+        ["label": "power", "channel": "11"],
+        ["label": "volumeup", "channel": "12"],
     ]
     lazy private var buttons: [ChannelButton] = self.createChannelButtons()
 

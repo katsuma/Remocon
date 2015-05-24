@@ -14,6 +14,7 @@
 		16EFD0631B105A7F00EB13DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */; };
 		16EFD06F1B105A7F00EB13DA /* RemoconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD06E1B105A7F00EB13DA /* RemoconTests.swift */; };
 		16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07A1B10C64900EB13DA /* ChannelButton.swift */; };
+		16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		16EFD06D1B105A7F00EB13DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EFD06E1B105A7F00EB13DA /* RemoconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoconTests.swift; sourceTree = "<group>"; };
 		16EFD07A1B10C64900EB13DA /* ChannelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelButton.swift; sourceTree = "<group>"; };
+		16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LigatureSymbols-2.11.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		16EFD0551B105A7F00EB13DA /* Remocon */ = {
 			isa = PBXGroup;
 			children = (
+				16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */,
 				16EFD0581B105A7F00EB13DA /* AppDelegate.swift */,
 				16EFD05A1B105A7F00EB13DA /* ViewController.swift */,
 				16EFD05C1B105A7F00EB13DA /* Main.storyboard */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EFD05E1B105A7F00EB13DA /* Main.storyboard in Resources */,
+				16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */,
 				16EFD0631B105A7F00EB13DA /* LaunchScreen.xib in Resources */,
 				16EFD0601B105A7F00EB13DA /* Images.xcassets in Resources */,
 			);

@@ -11,20 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - Properties -
-    private let buttonData: [Dictionary<String, String>] = [
-        ["label": "1", "channel": "1"],
-        ["label": "2", "channel": "2"],
-        ["label": "3", "channel": "3"],
-        ["label": "4", "channel": "4"],
-        ["label": "5", "channel": "5"],
-        ["label": "6", "channel": "6"],
-        ["label": "7", "channel": "7"],
-        ["label": "8", "channel": "8"],
-        ["label": "9", "channel": "9"],
-        ["label": "volumedown", "channel": "10"],
-        ["label": "power", "channel": "11"],
-        ["label": "volumeup", "channel": "12"],
-    ]
     lazy private var buttons: [ChannelButton] = self.createChannelButtons()
 
     // MARK: - Life cycle events -
@@ -32,8 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         for var i = 0; i < buttons.count; i++ {
-            buttons[i].label = buttonData[i]["label"]
-            buttons[i].channel = buttonData[i]["channel"]
+            buttons[i].label = ConfigurationService.buttons[i]["label"]
+            buttons[i].channel = ConfigurationService.buttons[i]["channel"]
             self.view.addSubview(buttons[i])
         }
     }
@@ -46,16 +32,11 @@ class ViewController: UIViewController {
     // MARK: - Create subviews -
     private func createChannelButtons() -> [ChannelButton] {
         var buttons: [ChannelButton] = []
-        println("capacity: \(buttonData.count)")
-        println(buttonData[0])
-        println(buttonData[1])
-        println(buttonData[2])
 
-        for var i = 0; i < buttonData.count; i++ {
-            var x: CGFloat = CGFloat(55 * (i % 3))
-            var y: CGFloat = CGFloat(55 * (i / 3))
-            println("\(i) is inserted: x: \(x), y:\(y), label: \(buttonData[i])")
-            buttons.append(ChannelButton(frame: CGRectMake(x, y, 50, 50)))
+        for var i = 0; i < ConfigurationService.buttons.count; i++ {
+            var x: CGFloat = CGFloat(85 * (i % 3))
+            var y: CGFloat = CGFloat(85 * (i / 3))
+            buttons.append(ChannelButton(frame: CGRectMake(x, y, 80, 80)))
         }
         return buttons
     }

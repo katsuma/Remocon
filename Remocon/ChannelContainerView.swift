@@ -30,6 +30,8 @@ class ChannelContainerView: UIView {
         for var i = 0; i < buttons.count; i++ {
             buttons[i].label = ConfigurationService.buttons[i]["label"]
             buttons[i].channel = ConfigurationService.buttons[i]["channel"]
+            buttons[i].tag = buttons[i].channel.toInt()!
+            buttons[i].addTarget(self, action: "pushedChannelButton:", forControlEvents: .TouchUpInside)
             self.addSubview(buttons[i])
         }
     }
@@ -50,6 +52,10 @@ class ChannelContainerView: UIView {
             buttons[i].frame.origin.x = CGFloat(85 * (i % 3))
             buttons[i].frame.origin.y = CGFloat(85 * (i / 3))
         }
+    }
+
+    internal func pushedChannelButton(sender: ChannelButton) {
+        println("pushed by \(sender.tag)")
     }
 
 }

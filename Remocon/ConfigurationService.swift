@@ -10,17 +10,22 @@ import Foundation
 
 class ConfigurationService {
     static let buttons: [Dictionary<String, String>] = [
-        ["label": "1", "channel": "1"],
-        ["label": "2", "channel": "2"],
-        ["label": "3", "channel": "3"],
-        ["label": "4", "channel": "4"],
-        ["label": "5", "channel": "5"],
-        ["label": "6", "channel": "6"],
-        ["label": "7", "channel": "7"],
-        ["label": "8", "channel": "8"],
-        ["label": "9", "channel": "9"],
-        ["label": "volumedown", "channel": "10"],
+        ["label": "1", "channel": "1201"],
+        ["label": "2", "channel": "1202"],
+        ["label": "3", "channel": "1203"],
+        ["label": "4", "channel": "1204"],
+        ["label": "5", "channel": "1205"],
+        ["label": "6", "channel": "1206"],
+        ["label": "7", "channel": "1207"],
+        ["label": "8", "channel": "1208"],
+        ["label": "9", "channel": "1209"],
+        ["label": "volumedown", "channel": "1252"],
         ["label": "power", "channel": "11"],
-        ["label": "volumeup", "channel": "12"],
+        ["label": "volumeup", "channel": "1251"],
+    ]
+
+    static let iRemocon: Dictionary<String, String> = [
+        "address": "192.168.0.3",
+        "port": "51013"
     ]
 }

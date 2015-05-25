@@ -17,6 +17,9 @@
 		16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */; };
 		16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */; };
 		16EFD0831B12167900EB13DA /* ChannelContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0821B12167900EB13DA /* ChannelContainerView.swift */; };
+		16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0951B123BB000EB13DA /* ytcpsocket.c */; };
+		16EFD0981B123BB000EB13DA /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0961B123BB000EB13DA /* ytcpsocket.swift */; };
+		16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0991B123BD900EB13DA /* ysocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,10 @@
 		16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LigatureSymbols-2.11.ttf"; sourceTree = "<group>"; };
 		16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		16EFD0821B12167900EB13DA /* ChannelContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelContainerView.swift; sourceTree = "<group>"; };
+		16EFD0941B123BAF00EB13DA /* Remocon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remocon-Bridging-Header.h"; sourceTree = "<group>"; };
+		16EFD0951B123BB000EB13DA /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		16EFD0961B123BB000EB13DA /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		16EFD0991B123BD900EB13DA /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,9 @@
 		16EFD0551B105A7F00EB13DA /* Remocon */ = {
 			isa = PBXGroup;
 			children = (
+				16EFD0991B123BD900EB13DA /* ysocket.swift */,
+				16EFD0951B123BB000EB13DA /* ytcpsocket.c */,
+				16EFD0961B123BB000EB13DA /* ytcpsocket.swift */,
 				16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */,
 				16EFD0581B105A7F00EB13DA /* AppDelegate.swift */,
 				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
@@ -95,6 +105,7 @@
 				16EFD05F1B105A7F00EB13DA /* Images.xcassets */,
 				16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */,
 				16EFD0561B105A7F00EB13DA /* Supporting Files */,
+				16EFD0941B123BAF00EB13DA /* Remocon-Bridging-Header.h */,
 			);
 			path = Remocon;
 			sourceTree = "<group>";
@@ -227,8 +238,11 @@
 			files = (
 				16EFD05B1B105A7F00EB13DA /* ViewController.swift in Sources */,
 				16EFD0831B12167900EB13DA /* ChannelContainerView.swift in Sources */,
+				16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */,
 				16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */,
 				16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */,
+				16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */,
+				16EFD0981B123BB000EB13DA /* ytcpsocket.swift in Sources */,
 				16EFD0591B105A7F00EB13DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,9 +370,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Remocon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Remocon/Remocon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -366,9 +383,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Remocon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Remocon/Remocon-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -425,6 +444,7 @@
 				16EFD0741B105A7F00EB13DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16EFD0751B105A7F00EB13DA /* Build configuration list for PBXNativeTarget "RemoconTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +453,7 @@
 				16EFD0771B105A7F00EB13DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

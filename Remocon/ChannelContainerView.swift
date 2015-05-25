@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelContainerView: UIView {
     lazy private var buttons: [ChannelButton] = self.createChannelButtons()
+    lazy private var client: TCPClient = self.createTCPClient()
 
     required override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,7 +44,13 @@ class ChannelContainerView: UIView {
             buttons.append(ChannelButton(frame: CGRectZero))
         }
         return buttons
+    }
 
+    private func createTCPClient() -> TCPClient {
+        var addr: String = ConfigurationService.iRemocon["address"]!
+        var port: String = ConfigurationService.iRemocon["port"]!
+
+        return TCPClient(addr: addr, port: port.toInt()!)
     }
 
     private func layoutChannelButtons() {
@@ -56,6 +63,9 @@ class ChannelContainerView: UIView {
 
     internal func pushedChannelButton(sender: ChannelButton) {
         println("pushed by \(sender.tag)")
+        client.connect(timeout: 10)
+        client.send(str: "*is;\(sender.tag)\r\n")
+        client.close()
     }
 
 }

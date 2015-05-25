@@ -31,14 +31,16 @@ class ChannelButton: UIButton {
     private func layoutButton() {
         self.titleLabel!.font = UIFont(name: "LigatureSymbols", size: 24)
         self.setTitle(label, forState: UIControlState.Normal)
-        self.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         self.setTitle(label, forState: UIControlState.Highlighted)
-        self.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+        self.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: UIControlState.Highlighted)
 
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
-        self.layer.borderWidth = 0.5
+        self.layer.borderWidth = 0.9
+        self.layer.borderColor = UIColor.whiteColor().CGColor
 
         self.tag = channel.toInt()!
     }
+
 }

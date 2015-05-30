@@ -20,8 +20,14 @@ class ConfigurationService {
         ["label": "8", "channel": "1208"],
         ["label": "9", "channel": "1209"],
         ["label": "volumedown", "channel": "1252"],
-        ["label": "power", "channel": "11"],
+        ["label": "power", "channel": "1241"],
         ["label": "volumeup", "channel": "1251"],
+    ]
+
+    static let inputs: [Dictionary<String, String>] = [
+        ["label": "input", "channel": "1261"],
+        ["label": "up",    "channel": "1262"],
+        ["label": "down",  "channel": "1263"],
     ]
 
     static let iRemocon: Dictionary<String, String> = [

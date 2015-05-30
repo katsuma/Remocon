@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
     // MARK: - Layout subviews -
     private func layoutChannelContainerView() {
-        channelContainerView.frame.size = CGSizeMake(250, 335)
+        channelContainerView.frame.size = CGSizeMake(280, 430)
         channelContainerView.center = self.view.center
     }
 }

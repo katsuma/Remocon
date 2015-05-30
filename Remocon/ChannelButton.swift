@@ -30,10 +30,10 @@ class ChannelButton: UIButton {
     // MARKL: - Layout view -
     private func layoutButton() {
         self.titleLabel!.font = UIFont(name: "LigatureSymbols", size: 24)
-        self.setTitle(label, forState: UIControlState.Normal)
-        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.setTitle(label, forState: UIControlState.Highlighted)
-        self.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: UIControlState.Highlighted)
+        self.setTitle(label, forState: .Normal)
+        self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.setTitle(label, forState: .Highlighted)
+        self.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: .Highlighted)
 
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 0.5 * self.bounds.size.width

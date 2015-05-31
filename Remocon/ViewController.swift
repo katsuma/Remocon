@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: - Properties -
     lazy private var channelContainerView: ChannelContainerView = self.createChannelContainerView()
+    lazy private var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
     override func viewDidLoad() {
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.layoutChannelContainerView()
+
+        self.channelContainerView.delegate = self
     }
 
     // MARK: - Create subviews -
@@ -42,8 +45,29 @@ class ViewController: UIViewController {
 
     // MARK: - Layout subviews -
     private func layoutChannelContainerView() {
-        channelContainerView.frame.size = CGSizeMake(280, 430)
+        channelContainerView.frame.size = CGSizeMake(280, 480)
         channelContainerView.center = self.view.center
+    }
+
+    private func createIremoconSignal() -> IremoconSignal {
+        return IremoconSignal.sharedInstance
+    }
+
+    private func showInputModalView() {
+        let inputControlViewController: UINavigationController = UINavigationController(rootViewController: InputControlViewController())
+        inputControlViewController.modalTransitionStyle = .CoverVertical
+        inputControlViewController.modalPresentationStyle = .PageSheet
+        self.presentViewController(inputControlViewController, animated: true, completion: nil)
+
     }
 }
 
+extension ViewController: ChannelContainerViewDelegate {
+    func buttonDidTap(channel: Int, sender: ChannelContainerView) {
+        signal.send(channel)
+
+        if channel == ConfigurationService.inputModalChannel {
+            showInputModalView()
+        }
+    }
+}

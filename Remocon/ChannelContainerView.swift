@@ -12,7 +12,7 @@ class ChannelContainerView: UIView {
     lazy private var buttons: [ChannelButton] = self.createChannelButtons()
     lazy private var inputButton: UIButton = self.createInputButton()
 
-    lazy private var client: TCPClient = self.createTCPClient()
+    weak var delegate: ChannelContainerViewDelegate! = nil
 
     required override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,21 +32,21 @@ class ChannelContainerView: UIView {
 
     private func commonInit() {
         for var i = 0; i < buttons.count; i++ {
-            buttons[i].label = ConfigurationService.buttons[i]["label"]
-            buttons[i].channel = ConfigurationService.buttons[i]["channel"]
+            buttons[i].label = ConfigurationService.channelButtons[i]["label"]
+            buttons[i].channel = ConfigurationService.channelButtons[i]["channel"]
             buttons[i].tag = buttons[i].channel.toInt()!
-            buttons[i].addTarget(self, action: "pushedChannelButton:", forControlEvents: .TouchUpInside)
+            buttons[i].addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
             self.addSubview(buttons[i])
         }
 
-        inputButton.addTarget(self, action: "pushedInputButton:", forControlEvents: .TouchUpInside)
+        inputButton.addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
         self.addSubview(inputButton)
     }
 
     private func createChannelButtons() -> [ChannelButton] {
         var buttons: [ChannelButton] = []
 
-        for var i = 0; i < ConfigurationService.buttons.count; i++ {
+        for var i = 0; i < ConfigurationService.channelButtons.count; i++ {
             buttons.append(ChannelButton(frame: CGRectZero))
         }
         return buttons
@@ -54,13 +54,6 @@ class ChannelContainerView: UIView {
 
     private func createInputButton() -> UIButton {
         return UIButton(frame: CGRectMake(0, 0, 50, 35))
-    }
-
-    private func createTCPClient() -> TCPClient {
-        var addr: String = ConfigurationService.iRemocon["address"]!
-        var port: String = ConfigurationService.iRemocon["port"]!
-
-        return TCPClient(addr: addr, port: port.toInt()!)
     }
 
     private func layoutChannelButtons() {
@@ -72,23 +65,24 @@ class ChannelContainerView: UIView {
     }
 
     private func layoutInputButton() {
-        let buttonTitle: String = "Input"
+        let inputButtonData: Dictionary<String, String> = ConfigurationService.inputButton
+        let buttonTitle: String = inputButtonData["label"]!
         inputButton.setTitle(buttonTitle, forState: .Normal)
         inputButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         inputButton.setTitle(buttonTitle, forState: .Highlighted)
         inputButton.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: .Highlighted)
+        inputButton.tag = inputButtonData["channel"]!.toInt()!
         inputButton.frame.origin.y = 420
         inputButton.frame.origin.x = 115
     }
 
-    internal func pushedChannelButton(sender: ChannelButton) {
-        println("pushed by \(sender.tag)")
-        client.connect(timeout: 10)
-        client.send(str: "*is;\(sender.tag)\r\n")
-        client.close()
+    internal func pushedButton(sender: UIButton) {
+        delegate?.buttonDidTap(sender.tag, sender: self)
     }
 
-    internal func pushedInputButton(sender: UIButton) {
-        println("pushed by InputButton")
-    }
 }
+
+protocol ChannelContainerViewDelegate: class {
+    func buttonDidTap(channel: Int, sender: ChannelContainerView)
+}
+

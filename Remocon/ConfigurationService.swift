@@ -9,7 +9,9 @@
 import Foundation
 
 class ConfigurationService {
-    static let buttons: [Dictionary<String, String>] = [
+    static let inputModalChannel: Int = 1261
+
+    static let channelButtons: [Dictionary<String, String>] = [
         ["label": "1", "channel": "1201"],
         ["label": "2", "channel": "1202"],
         ["label": "3", "channel": "1203"],
@@ -24,8 +26,11 @@ class ConfigurationService {
         ["label": "volumeup", "channel": "1251"],
     ]
 
-    static let inputs: [Dictionary<String, String>] = [
-        ["label": "input", "channel": "1261"],
+    static let inputButton: Dictionary<String, String> = [
+        "label": "Input", "channel": String(inputModalChannel)
+    ]
+
+    static let controlButtons: [Dictionary<String, String>] = [
         ["label": "up",    "channel": "1262"],
         ["label": "down",  "channel": "1263"],
     ]

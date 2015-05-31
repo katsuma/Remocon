@@ -26,8 +26,19 @@ class ChannelButton: UIButton {
         layoutButton()
     }
 
+    override var highlighted: Bool {
+        didSet {
+            if (highlighted) {
+                self.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
+                self.setTitleColor(UIColor.clearColor(), forState: .Highlighted)
+            } else {
+                self.backgroundColor = UIColor.clearColor()
+                self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            }
+        }
+    }
 
-    // MARKL: - Layout view -
+    // MARK: - Layout view -
     private func layoutButton() {
         self.titleLabel!.font = UIFont(name: "LigatureSymbols", size: 24)
         self.setTitle(label, forState: .Normal)
@@ -42,5 +53,4 @@ class ChannelButton: UIButton {
 
         self.tag = channel.toInt()!
     }
-
 }

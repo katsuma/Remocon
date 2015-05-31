@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SystemConfiguration
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.initGradientBackground()
         self.view.addSubview(channelContainerView)
+        self.checkConnectionReachability()
     }
 
     override func viewDidLayoutSubviews() {
@@ -43,6 +45,17 @@ class ViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
+    private func isConnectionAvailable(hostName: String) -> Bool {
+        var reachability: SCNetworkReachabilityRef = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, hostName).takeRetainedValue()
+        var flags : SCNetworkReachabilityFlags = 0
+        if SCNetworkReachabilityGetFlags(reachability, &flags) == 0 {
+            return false
+        }
+        let isReachable = (flags & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
+
     // MARK: - Layout subviews -
     private func layoutChannelContainerView() {
         channelContainerView.frame.size = CGSizeMake(280, 450)
@@ -53,12 +66,19 @@ class ViewController: UIViewController {
         return IremoconSignal.sharedInstance
     }
 
+    private func checkConnectionReachability() {
+        var connected: Bool = isConnectionAvailable(ConfigurationService.iRemocon["address"]!)
+        if !connected {
+            let alertView: UIAlertView = UIAlertView(title: "iRemocon", message:"Cannot connect to iRemocon", delegate: nil, cancelButtonTitle: "Cancel", otherButtonTitles: "OK")
+            alertView.show()
+        }
+    }
+
     private func showInputModalView() {
         let inputControlViewController: UINavigationController = UINavigationController(rootViewController: InputControlViewController())
         inputControlViewController.modalTransitionStyle = .CoverVertical
         inputControlViewController.modalPresentationStyle = .OverFullScreen
         self.presentViewController(inputControlViewController, animated: true, completion: nil)
-
     }
 }
 

@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     private func showInputModalView() {
         let inputControlViewController: UINavigationController = UINavigationController(rootViewController: InputControlViewController())
         inputControlViewController.modalTransitionStyle = .CoverVertical
-        inputControlViewController.modalPresentationStyle = .PageSheet
+        inputControlViewController.modalPresentationStyle = .OverFullScreen
         self.presentViewController(inputControlViewController, animated: true, completion: nil)
 
     }

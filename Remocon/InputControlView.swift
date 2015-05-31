@@ -64,7 +64,6 @@ class InputControlView: UIView {
     }
 
     internal func pushedControlButton(sender: ChannelButton) {
-        println("pushed by ControlButton, \(sender.tag)")
         delegate?.buttonDidTap(sender.tag, sender: self)
     }
 }

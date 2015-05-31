@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SystemConfiguration
+import IJReachability
 
 class ViewController: UIViewController {
 
@@ -45,17 +45,6 @@ class ViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
-    private func isConnectionAvailable(hostName: String) -> Bool {
-        var reachability: SCNetworkReachabilityRef = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, hostName).takeRetainedValue()
-        var flags : SCNetworkReachabilityFlags = 0
-        if SCNetworkReachabilityGetFlags(reachability, &flags) == 0 {
-            return false
-        }
-        let isReachable = (flags & UInt32(kSCNetworkFlagsReachable)) != 0
-        let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-        return (isReachable && !needsConnection)
-    }
-
     // MARK: - Layout subviews -
     private func layoutChannelContainerView() {
         channelContainerView.frame.size = CGSizeMake(280, 450)
@@ -67,11 +56,25 @@ class ViewController: UIViewController {
     }
 
     private func checkConnectionReachability() {
-        var connected: Bool = isConnectionAvailable(ConfigurationService.iRemocon["address"]!)
-        if !connected {
-            let alertView: UIAlertView = UIAlertView(title: "iRemocon", message:"Cannot connect to iRemocon", delegate: nil, cancelButtonTitle: "Cancel", otherButtonTitles: "OK")
-            alertView.show()
+        if !IJReachability.isConnectedToNetwork() {
+            showConnectionAlert()
+            return
         }
+
+        let statusType: IJReachabilityType = IJReachability.isConnectedToNetworkOfType()
+        switch statusType {
+        case .WWAN:
+            showConnectionAlert()
+        case .NotConnected:
+            showConnectionAlert()
+        case .WiFi:
+            break
+        }
+    }
+
+    private func showConnectionAlert() {
+        let alertView: UIAlertView = UIAlertView(title: "iRemocon", message:"Cannot connect to iRemocon", delegate: nil, cancelButtonTitle: "Cancel", otherButtonTitles: "OK")
+        alertView.show()
     }
 
     private func showInputModalView() {

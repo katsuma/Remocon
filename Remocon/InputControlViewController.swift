@@ -64,7 +64,12 @@ class InputControlViewController: UIViewController {
 
     private func initNavigation() {
         let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "pushedDoneButton:")
+        doneButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = doneButton
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
     }
 
     internal func pushedDoneButton(sender: UIButton) {

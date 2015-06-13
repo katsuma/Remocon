@@ -48,7 +48,7 @@ class ChannelButton: UIButton {
 
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
-        self.layer.borderWidth = 0.9
+        self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.whiteColor().CGColor
 
         self.tag = channel.toInt()!

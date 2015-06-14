@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TvViewController.swift
 //  Remocon
 //
 //  Created by Ryo Katsuma on 2015/05/23.
@@ -7,32 +7,30 @@
 //
 
 import UIKit
-import IJReachability
 
-class ViewController: UIViewController {
+class TvViewController: UIViewController {
 
     // MARK: - Properties -
-    lazy private var channelContainerView: ChannelContainerView = self.createChannelContainerView()
+    lazy private var tvView: TvView = self.createTvView()
     lazy private var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initGradientBackground()
-        self.view.addSubview(channelContainerView)
-        self.checkConnectionReachability()
+        self.view.addSubview(tvView)
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.layoutChannelContainerView()
+        self.layoutTvView()
 
-        self.channelContainerView.delegate = self
+        self.tvView.delegate = self
     }
 
     // MARK: - Create subviews -
-    private func createChannelContainerView() -> ChannelContainerView {
-        return ChannelContainerView(frame: CGRectZero)
+    private func createTvView() -> TvView {
+        return TvView(frame: CGRectZero)
     }
 
     private func initGradientBackground() {
@@ -46,35 +44,13 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Layout subviews -
-    private func layoutChannelContainerView() {
-        channelContainerView.frame.size = CGSizeMake(280, 450)
-        channelContainerView.center = self.view.center
+    private func layoutTvView() {
+        tvView.frame.size = CGSizeMake(280, 450)
+        tvView.center = self.view.center
     }
 
     private func createIremoconSignal() -> IremoconSignal {
         return IremoconSignal.sharedInstance
-    }
-
-    private func checkConnectionReachability() {
-        if !IJReachability.isConnectedToNetwork() {
-            showConnectionAlert()
-            return
-        }
-
-        let statusType: IJReachabilityType = IJReachability.isConnectedToNetworkOfType()
-        switch statusType {
-        case .WWAN:
-            showConnectionAlert()
-        case .NotConnected:
-            showConnectionAlert()
-        case .WiFi:
-            break
-        }
-    }
-
-    private func showConnectionAlert() {
-        let alertView: UIAlertView = UIAlertView(title: "iRemocon", message:"Cannot connect to iRemocon", delegate: nil, cancelButtonTitle: "Cancel", otherButtonTitles: "OK")
-        alertView.show()
     }
 
     private func showInputModalView() {
@@ -85,8 +61,8 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ChannelContainerViewDelegate {
-    func buttonDidTap(channel: Int, sender: ChannelContainerView) {
+extension TvViewController: TvViewDelegate {
+    func buttonDidTap(channel: Int, sender: TvView) {
         signal.send(channel)
 
         if channel == ConfigurationService.inputModalChannel {

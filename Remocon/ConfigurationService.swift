@@ -30,6 +30,10 @@ class ConfigurationService {
         "label": "Input", "channel": String(inputModalChannel)
     ]
 
+    static let playPauseButton: Dictionary<String, String> = [
+        "label": "playpause", "channel": "1270"
+    ]
+
     static let controlButtons: [Dictionary<String, String>] = [
         ["label": "up",    "channel": "1262"],
         ["label": "down",  "channel": "1263"],

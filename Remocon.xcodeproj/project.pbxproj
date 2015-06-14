@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F713DE13208C9C307B8759E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B95A2EEFE3B2D85ACD524A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		16EFD0591B105A7F00EB13DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0581B105A7F00EB13DA /* AppDelegate.swift */; };
-		16EFD05B1B105A7F00EB13DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD05A1B105A7F00EB13DA /* ViewController.swift */; };
+		16EFD05B1B105A7F00EB13DA /* TvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD05A1B105A7F00EB13DA /* TvViewController.swift */; };
 		16EFD05E1B105A7F00EB13DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD05C1B105A7F00EB13DA /* Main.storyboard */; };
 		16EFD0601B105A7F00EB13DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD05F1B105A7F00EB13DA /* Images.xcassets */; };
 		16EFD0631B105A7F00EB13DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */; };
@@ -17,13 +17,16 @@
 		16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07A1B10C64900EB13DA /* ChannelButton.swift */; };
 		16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */; };
 		16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */; };
-		16EFD0831B12167900EB13DA /* ChannelContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0821B12167900EB13DA /* ChannelContainerView.swift */; };
+		16EFD0831B12167900EB13DA /* TvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0821B12167900EB13DA /* TvView.swift */; };
 		16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0951B123BB000EB13DA /* ytcpsocket.c */; };
 		16EFD0981B123BB000EB13DA /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0961B123BB000EB13DA /* ytcpsocket.swift */; };
 		16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0991B123BD900EB13DA /* ysocket.swift */; };
 		16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09D1B19A75100EB13DA /* InputControlView.swift */; };
 		16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */; };
 		16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */; };
+		16F159341B2D186700D00C03 /* ChannelTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F159331B2D186700D00C03 /* ChannelTabViewController.swift */; };
+		16F159391B2D1B9200D00C03 /* AppleTvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F159381B2D1B9200D00C03 /* AppleTvViewController.swift */; };
+		16F1593B1B2D52E300D00C03 /* AppleTvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1593A1B2D52E300D00C03 /* AppleTvView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,7 @@
 		16EFD0531B105A7F00EB13DA /* Remocon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remocon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EFD0571B105A7F00EB13DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EFD0581B105A7F00EB13DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16EFD05A1B105A7F00EB13DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16EFD05A1B105A7F00EB13DA /* TvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvViewController.swift; sourceTree = "<group>"; };
 		16EFD05D1B105A7F00EB13DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16EFD05F1B105A7F00EB13DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16EFD0621B105A7F00EB13DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -50,7 +53,7 @@
 		16EFD07A1B10C64900EB13DA /* ChannelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelButton.swift; sourceTree = "<group>"; };
 		16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LigatureSymbols-2.11.ttf"; sourceTree = "<group>"; };
 		16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
-		16EFD0821B12167900EB13DA /* ChannelContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelContainerView.swift; sourceTree = "<group>"; };
+		16EFD0821B12167900EB13DA /* TvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvView.swift; sourceTree = "<group>"; };
 		16EFD0941B123BAF00EB13DA /* Remocon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remocon-Bridging-Header.h"; sourceTree = "<group>"; };
 		16EFD0951B123BB000EB13DA /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
 		16EFD0961B123BB000EB13DA /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
@@ -58,6 +61,9 @@
 		16EFD09D1B19A75100EB13DA /* InputControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlView.swift; sourceTree = "<group>"; };
 		16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlViewController.swift; sourceTree = "<group>"; };
 		16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IremoconSignal.swift; sourceTree = "<group>"; };
+		16F159331B2D186700D00C03 /* ChannelTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTabViewController.swift; sourceTree = "<group>"; };
+		16F159381B2D1B9200D00C03 /* AppleTvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleTvViewController.swift; sourceTree = "<group>"; };
+		16F1593A1B2D52E300D00C03 /* AppleTvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleTvView.swift; sourceTree = "<group>"; };
 		D9DA37189DEF5FACE8889ADF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B95A2EEFE3B2D85ACD524A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F4894536116BF9CB69F00A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,18 +111,11 @@
 		16EFD0551B105A7F00EB13DA /* Remocon */ = {
 			isa = PBXGroup;
 			children = (
-				16EFD0991B123BD900EB13DA /* ysocket.swift */,
-				16EFD0951B123BB000EB13DA /* ytcpsocket.c */,
-				16EFD0961B123BB000EB13DA /* ytcpsocket.swift */,
-				16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */,
+				16F159371B2D192400D00C03 /* controllers */,
+				16F159351B2D18C400D00C03 /* views */,
+				16F159361B2D18E900D00C03 /* libs */,
 				16EFD0581B105A7F00EB13DA /* AppDelegate.swift */,
-				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
 				16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */,
-				16EFD0821B12167900EB13DA /* ChannelContainerView.swift */,
-				16EFD09D1B19A75100EB13DA /* InputControlView.swift */,
-				16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */,
-				16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */,
-				16EFD05A1B105A7F00EB13DA /* ViewController.swift */,
 				16EFD05C1B105A7F00EB13DA /* Main.storyboard */,
 				16EFD05F1B105A7F00EB13DA /* Images.xcassets */,
 				16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */,
@@ -149,6 +148,40 @@
 				16EFD06D1B105A7F00EB13DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16F159351B2D18C400D00C03 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				16EFD09D1B19A75100EB13DA /* InputControlView.swift */,
+				16EFD0821B12167900EB13DA /* TvView.swift */,
+				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
+				16F1593A1B2D52E300D00C03 /* AppleTvView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		16F159361B2D18E900D00C03 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				16EFD0991B123BD900EB13DA /* ysocket.swift */,
+				16EFD0951B123BB000EB13DA /* ytcpsocket.c */,
+				16EFD0961B123BB000EB13DA /* ytcpsocket.swift */,
+				16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */,
+				16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		16F159371B2D192400D00C03 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */,
+				16EFD05A1B105A7F00EB13DA /* TvViewController.swift */,
+				16F159331B2D186700D00C03 /* ChannelTabViewController.swift */,
+				16F159381B2D1B9200D00C03 /* AppleTvViewController.swift */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 		421EECA00329387EF73EE29F /* Pods */ = {
@@ -321,13 +354,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16EFD05B1B105A7F00EB13DA /* ViewController.swift in Sources */,
-				16EFD0831B12167900EB13DA /* ChannelContainerView.swift in Sources */,
+				16EFD05B1B105A7F00EB13DA /* TvViewController.swift in Sources */,
+				16F159341B2D186700D00C03 /* ChannelTabViewController.swift in Sources */,
+				16EFD0831B12167900EB13DA /* TvView.swift in Sources */,
 				16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */,
 				16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */,
+				16F159391B2D1B9200D00C03 /* AppleTvViewController.swift in Sources */,
 				16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */,
 				16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */,
 				16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */,
+				16F1593B1B2D52E300D00C03 /* AppleTvView.swift in Sources */,
 				16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */,
 				16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */,
 				16EFD0981B123BB000EB13DA /* ytcpsocket.swift in Sources */,

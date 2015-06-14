@@ -1,5 +1,5 @@
 //
-//  ChannelContainerView.swift
+//  TvView.swift
 //  Remocon
 //
 //  Created by Ryo Katsuma on 2015/05/24.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ChannelContainerView: UIView {
+class TvView: UIView {
     lazy private var buttons: [ChannelButton] = self.createChannelButtons()
     lazy private var inputButton: UIButton = self.createInputButton()
 
-    weak var delegate: ChannelContainerViewDelegate! = nil
+    weak var delegate: TvViewDelegate! = nil
 
     required override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,7 +82,7 @@ class ChannelContainerView: UIView {
 
 }
 
-protocol ChannelContainerViewDelegate: class {
-    func buttonDidTap(channel: Int, sender: ChannelContainerView)
+protocol TvViewDelegate: class {
+    func buttonDidTap(channel: Int, sender: TvView)
 }
 

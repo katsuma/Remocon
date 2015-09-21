@@ -17,13 +17,17 @@ class ChannelTabViewController: UITabBarController {
         super.viewDidLoad()
 
         self.initTabBarItem()
-        self.checkConnectionReachability()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.checkConnectionReachability()
+    }
 
     private func initTabBarItem() {
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
@@ -56,7 +60,9 @@ class ChannelTabViewController: UITabBarController {
     }
 
     private func showConnectionAlert() {
-        let alertView: UIAlertView = UIAlertView(title: "iRemocon", message:"Cannot connect to iRemocon", delegate: nil, cancelButtonTitle: "Cancel", otherButtonTitles: "OK")
-        alertView.show()
+        let alertController: UIAlertController = UIAlertController(title: "iRemocon", message: "Cannot connect to iRemocon", preferredStyle: .Alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
 }

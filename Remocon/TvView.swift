@@ -20,7 +20,7 @@ class TvView: UIView {
     }
 
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         commonInit()
     }
 
@@ -34,7 +34,7 @@ class TvView: UIView {
         for var i = 0; i < buttons.count; i++ {
             buttons[i].label = ConfigurationService.channelButtons[i]["label"]
             buttons[i].channel = ConfigurationService.channelButtons[i]["channel"]
-            buttons[i].tag = buttons[i].channel.toInt()!
+            buttons[i].tag = Int(buttons[i].channel)!
             buttons[i].addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
             self.addSubview(buttons[i])
         }
@@ -71,7 +71,7 @@ class TvView: UIView {
         inputButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         inputButton.setTitle(buttonTitle, forState: .Highlighted)
         inputButton.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: .Highlighted)
-        inputButton.tag = inputButtonData["channel"]!.toInt()!
+        inputButton.tag = Int(inputButtonData["channel"]!)!
         inputButton.frame.origin.y = 420
         inputButton.frame.origin.x = 115
     }

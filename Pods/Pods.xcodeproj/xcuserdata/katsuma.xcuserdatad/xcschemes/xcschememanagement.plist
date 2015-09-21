@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-IJReachability.xcscheme</key>
+		<key>IJReachability.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>420F11E092663A0E2A156EF0</key>
+		<key>34E07EF7C3709991B0FB611D18199E5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6199DA8ADF3CBA4E4442C215</key>
+		<key>BCE007F24B0B4632CC23B3FA84C3C36A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

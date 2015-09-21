@@ -2,18 +2,20 @@ PODS:
   - IJReachability (0.1.0)
 
 DEPENDENCIES:
-  - IJReachability (from `https://github.com/Isuru-Nanayakkara/IJReachability.git`)
+  - IJReachability (from `https://github.com/Jamal1337/IJReachability.git`, branch
+    `master`)
 
 EXTERNAL SOURCES:
   IJReachability:
-    :git: https://github.com/Isuru-Nanayakkara/IJReachability.git
+    :branch: master
+    :git: https://github.com/Jamal1337/IJReachability.git
 
 CHECKOUT OPTIONS:
   IJReachability:
-    :commit: da69c8f4bed9f82203bb49180fb36091b4cd0d28
-    :git: https://github.com/Isuru-Nanayakkara/IJReachability.git
+    :commit: 33b99064f410955b5fa19b66ba8c9fea2da67d39
+    :git: https://github.com/Jamal1337/IJReachability.git
 
 SPEC CHECKSUMS:
   IJReachability: 3eff33caca50869df09b257bcf712031a56a8575
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0.beta.4

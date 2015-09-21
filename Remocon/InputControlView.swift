@@ -20,7 +20,7 @@ class InputControlView: UIView {
     }
 
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         self.commonInit()
     }
     
@@ -38,17 +38,17 @@ class InputControlView: UIView {
     }
 
     private func commonInit() {
-        println("commonInit on InputControl")
+        print("commonInit on InputControl")
 
         upButton.label = ConfigurationService.controlButtons[0]["label"]
         upButton.channel = ConfigurationService.controlButtons[0]["channel"]
-        upButton.tag = ConfigurationService.controlButtons[0]["channel"]!.toInt()!
+        upButton.tag = Int(ConfigurationService.controlButtons[0]["channel"]!)!
         upButton.addTarget(self, action: "pushedControlButton:", forControlEvents: .TouchUpInside)
         self.addSubview(upButton)
 
         downButton.label = ConfigurationService.controlButtons[1]["label"]
         downButton.channel = ConfigurationService.controlButtons[1]["channel"]
-        downButton.tag = ConfigurationService.controlButtons[1]["channel"]!.toInt()!
+        downButton.tag = Int(ConfigurationService.controlButtons[1]["channel"]!)!
         downButton.addTarget(self, action: "pushedControlButton:", forControlEvents: .TouchUpInside)
         self.addSubview(downButton)
     }

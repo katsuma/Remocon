@@ -16,10 +16,10 @@ final class IremoconSignal {
     private init() { }
 
     private func createTCPClient() -> TCPClient {
-        var addr: String = ConfigurationService.iRemocon["address"]!
-        var port: String = ConfigurationService.iRemocon["port"]!
+        let addr: String = ConfigurationService.iRemocon["address"]!
+        let port: String = ConfigurationService.iRemocon["port"]!
 
-        return TCPClient(addr: addr, port: port.toInt()!)
+        return TCPClient(addr: addr, port: Int(port)!)
     }
 
     internal func send(channel: Int) {

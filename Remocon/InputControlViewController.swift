@@ -39,8 +39,8 @@ class InputControlViewController: UIViewController {
         self.view.backgroundColor = .clearColor()
         let visuaEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
         visuaEffectView.frame = self.view.bounds
-        visuaEffectView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        visuaEffectView.setTranslatesAutoresizingMaskIntoConstraints(true)
+        visuaEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        visuaEffectView.translatesAutoresizingMaskIntoConstraints = true
         self.view.addSubview(visuaEffectView)
     }
 

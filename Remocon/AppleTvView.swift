@@ -23,7 +23,7 @@ class AppleTvView: UIView {
     }
 
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         commonInit()
     }
 
@@ -34,7 +34,7 @@ class AppleTvView: UIView {
     private func initPlayPauseButton() {
         playPauseButton.label = ConfigurationService.playPauseButton["label"]
         playPauseButton.channel = ConfigurationService.playPauseButton["channel"]
-        playPauseButton.tag = playPauseButton.channel.toInt()!
+        playPauseButton.tag = Int(playPauseButton.channel)!
         playPauseButton.addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
 
         self.addSubview(playPauseButton)
@@ -46,8 +46,6 @@ class AppleTvView: UIView {
     }
 
     private func layoutPlayPauseButton() {
-        let playPauseButtonData: Dictionary<String, String> = ConfigurationService.playPauseButton
-        let buttonTitle: String = playPauseButtonData["label"]!
         playPauseButton.frame.size = CGSizeMake(80, 80)
         playPauseButton.frame.origin.x = CGFloat(200)
         playPauseButton.frame.origin.y = CGFloat(100)

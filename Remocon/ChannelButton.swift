@@ -15,7 +15,7 @@ class ChannelButton: UIButton {
 
     // MARK: - Life cycle events -
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
 
     required override init(frame: CGRect) {
@@ -51,6 +51,6 @@ class ChannelButton: UIButton {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.whiteColor().CGColor
 
-        self.tag = channel.toInt()!
+        self.tag = Int(channel)!
     }
 }

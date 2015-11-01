@@ -13,9 +13,12 @@ import IJReachability
 class ChannelTabViewController: UITabBarController {
     lazy private var signal: IremoconSignal = self.createIremoconSignal()
 
+    override func loadView() {
+        super.loadView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.initTabBarItem()
     }
 
@@ -30,12 +33,17 @@ class ChannelTabViewController: UITabBarController {
     }
 
     private func initTabBarItem() {
+        SFKImage.setDefaultFont(UIFont.init(name: "LigatureSymbols", size: 36))
+        SFKImage.setDefaultColor(UIColor.whiteColor())
+
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage()
 
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.5)], forState: UIControlState.Normal)
+
+        self.tabBar.tintColor = UIColor.whiteColor()
     }
 
     private func createIremoconSignal() -> IremoconSignal {

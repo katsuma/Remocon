@@ -15,6 +15,13 @@ class AppleTvViewController: UIViewController {
     lazy private var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
+    override func loadView() {
+        super.loadView()
+
+        //self.tabBarItem.image = UIImage.init(named: "apple_unselected.png")
+        //self.tabBarItem.selectedImage = UIImage.init(named: "apple.png")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initGradientBackground()

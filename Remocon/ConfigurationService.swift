@@ -21,9 +21,9 @@ class ConfigurationService {
         ["label": "7", "channel": "1207"],
         ["label": "8", "channel": "1208"],
         ["label": "9", "channel": "1209"],
-        ["label": "minus", "channel": "1252"],
+        ["label": "minus", "channel": "1272"], // 1252 is based on TV
         ["label": "power", "channel": "1241"],
-        ["label": "plus", "channel": "1251"],
+        ["label": "plus", "channel": "1271"],  // 1251 is based on TV
     ]
 
     static let inputButton: Dictionary<String, String> = [

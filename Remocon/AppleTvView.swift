@@ -11,6 +11,14 @@ import UIKit
 class AppleTvView: UIView {
     lazy private var playPauseButton: ChannelButton = self.createChannelButton()
 
+    lazy private var upButton: ChannelButton = self.createChannelButton()
+    lazy private var downButton: ChannelButton = self.createChannelButton()
+    lazy private var rightButton: ChannelButton = self.createChannelButton()
+    lazy private var leftButton: ChannelButton = self.createChannelButton()
+
+    lazy private var okButton: ChannelButton = self.createChannelButton()
+    lazy private var menuButton: ChannelButton = self.createChannelButton()
+
     weak var delegate: AppleTvViewDelegate! = nil
 
     required override init(frame: CGRect) {
@@ -18,40 +26,45 @@ class AppleTvView: UIView {
         commonInit()
     }
 
-    private func createChannelButton() -> ChannelButton {
-        return ChannelButton(frame: CGRectZero)
-    }
-
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        commonInit()
-    }
-
-    private func commonInit() {
-        initPlayPauseButton()
-    }
-
-    private func initPlayPauseButton() {
-        playPauseButton.label = ConfigurationService.playPauseButton["label"]
-        playPauseButton.channel = ConfigurationService.playPauseButton["channel"]
-        playPauseButton.tag = Int(playPauseButton.channel)!
-        playPauseButton.addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
-
-        self.addSubview(playPauseButton)
+        //commonInit()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layoutPlayPauseButton()
+        self.layoutButtons()
     }
 
-    private func layoutPlayPauseButton() {
-        playPauseButton.frame.size = CGSizeMake(80, 80)
-        playPauseButton.frame.origin.x = CGFloat(200)
-        playPauseButton.frame.origin.y = CGFloat(100)
+    private func commonInit() {
+        let controlButtons = ConfigurationService.controlButtons
+        let buttons = [upButton, downButton, rightButton, leftButton, okButton, menuButton]
+        for var i = 0; i < buttons.count; i++ {
+            buttons[i].label = controlButtons[i]["label"]
+            buttons[i].channel = controlButtons[i]["channel"]
+            buttons[i].tag = Int(controlButtons[i]["channel"]!)!
+            buttons[i].addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
+            self.addSubview(buttons[i])
+        }
+    }
+
+    private func createChannelButton() -> ChannelButton {
+        return ChannelButton(frame: CGRectZero)
+    }
+
+    private func layoutButtons() {
+        upButton.frame = CGRect(x: 100, y: 0, width: 80, height: 80)
+        okButton.frame = CGRect(x: 100, y: 100, width: 80, height: 80)
+        downButton.frame = CGRect(x: 100, y: 200, width: 80, height: 80)
+        menuButton.frame = CGRect(x: 100, y: 300, width: 80, height: 80)
+        rightButton.frame = CGRect(x: 200, y: 100, width: 80, height: 80)
+        leftButton.frame = CGRect(x: 0, y: 100, width: 80, height: 80)
     }
 
     @IBAction internal func pushedButton(sender: UIButton) {
+        let button = sender as! ChannelButton
+        print(button.label, button.tag)
+
         delegate?.buttonDidTap(sender.tag, sender: self)
     }
 

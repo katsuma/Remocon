@@ -15,22 +15,22 @@ class AppleTvViewController: UIViewController {
     lazy private var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
-    override func loadView() {
-        super.loadView()
-
-        //self.tabBarItem.image = UIImage.init(named: "apple_unselected.png")
-        //self.tabBarItem.selectedImage = UIImage.init(named: "apple.png")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initGradientBackground()
         self.view.addSubview(appleTvView)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.layoutAppleTvView()
+
+        self.appleTvView.delegate = self
+    }
+
     private func initGradientBackground() {
-        let topColor: UIColor = UIColor(red:0.18, green:0.32, blue:0.44, alpha:1)
-        let bottomColor: UIColor = UIColor(red:0.76, green:0.73, blue:0.17, alpha:1)
+        let topColor: UIColor = UIColor(red:0.18, green:0.18, blue:0.18, alpha:1)
+        let bottomColor: UIColor = UIColor(red:0.76, green:0.76, blue:0.76, alpha:1)
         let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
@@ -38,24 +38,25 @@ class AppleTvViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
-    private func createAppleTvView() -> AppleTvView{
+    // MARK: - Layout subviews -
+    private func createAppleTvView() -> AppleTvView {
         return AppleTvView(frame: CGRectZero)
+    }
+
+    private func layoutAppleTvView() {
+        appleTvView.frame = CGRect(x: 0, y: 0, width: 280, height: 450)
+        appleTvView.center = self.view.center
     }
 
     private func createIremoconSignal() -> IremoconSignal {
         return IremoconSignal.sharedInstance
     }
 
-    // MARK: - Layout subviews -
-    private func layoutTvView() {
-        appleTvView.frame.size = CGSizeMake(280, 450)
-        appleTvView.center = self.view.center
-    }
-
 }
 
 extension AppleTvViewController: AppleTvViewDelegate {
     func buttonDidTap(channel: Int, sender: AppleTvView) {
+        print("buttonDidTap on AppleTvView: \(channel)")
         signal.send(channel)
     }
 }

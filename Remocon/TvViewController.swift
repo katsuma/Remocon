@@ -15,13 +15,6 @@ class TvViewController: UIViewController {
     lazy private var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
-    override func loadView() {
-        super.loadView()
-
-        //self.tabBarItem.image = UIImage.init(named: "tv_unselected.png")
-        //self.tabBarItem.selectedImage = UIImage.init(named: "tv.png")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initGradientBackground()
@@ -70,6 +63,7 @@ class TvViewController: UIViewController {
 
 extension TvViewController: TvViewDelegate {
     func buttonDidTap(channel: Int, sender: TvView) {
+        print("buttonDidTap on TvView: \(channel)")
         signal.send(channel)
 
         if channel == ConfigurationService.inputModalChannel {

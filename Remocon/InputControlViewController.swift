@@ -26,10 +26,6 @@ class InputControlViewController: UIViewController {
         self.inputControlView.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     // MARK: - Create subviews -
     private func createInputControlView() -> InputControlView {
         return InputControlView(frame: CGRectZero)

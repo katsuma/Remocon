@@ -37,6 +37,10 @@ class ConfigurationService {
     static let controlButtons: [Dictionary<String, String>] = [
         ["label": "up",    "channel": "1262"],
         ["label": "down",  "channel": "1263"],
+        ["label": "right",  "channel": "1264"],
+        ["label": "left",  "channel": "1265"],
+        ["label": " ",  "channel": "1266"],
+        ["label": "menu",  "channel": "1267"],
     ]
 
     static let iRemocon: Dictionary<String, String> = [

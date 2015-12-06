@@ -54,11 +54,11 @@ class InputControlView: UIView {
     private func layoutButtons() {
         upButton.frame.size = CGSizeMake(80, 80)
         upButton.frame.origin.x = CGFloat(150)
-        upButton.frame.origin.y = CGFloat(100)
+        upButton.frame.origin.y = CGFloat(150)
 
         downButton.frame.size = CGSizeMake(80, 80)
         downButton.frame.origin.x = CGFloat(150)
-        downButton.frame.origin.y = CGFloat(200)
+        downButton.frame.origin.y = CGFloat(250)
     }
 
     internal func pushedControlButton(sender: ChannelButton) {

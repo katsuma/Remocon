@@ -31,22 +31,22 @@ class TvView: UIView {
     }
 
     private func commonInit() {
-        for var i = 0; i < buttons.count; i++ {
+        for i in 0 ..< buttons.count {
             buttons[i].label = ConfigurationService.channelButtons[i]["label"]
             buttons[i].channel = ConfigurationService.channelButtons[i]["channel"]
             buttons[i].tag = Int(buttons[i].channel)!
-            buttons[i].addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
+            buttons[i].addTarget(self, action: #selector(TvView.pushedButton(_:)), forControlEvents: .TouchUpInside)
             self.addSubview(buttons[i])
         }
 
-        inputButton.addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
+        inputButton.addTarget(self, action: #selector(TvView.pushedButton(_:)), forControlEvents: .TouchUpInside)
         self.addSubview(inputButton)
     }
 
     private func createChannelButtons() -> [ChannelButton] {
         var buttons: [ChannelButton] = []
 
-        for var i = 0; i < ConfigurationService.channelButtons.count; i++ {
+        for _ in 0 ..< ConfigurationService.channelButtons.count {
             buttons.append(ChannelButton(frame: CGRectZero))
         }
         return buttons
@@ -57,7 +57,7 @@ class TvView: UIView {
     }
 
     private func layoutChannelButtons() {
-        for var i = 0; i < buttons.count; i++ {
+        for i in 0 ..< buttons.count {
             buttons[i].frame.size = CGSizeMake(80, 80)
             buttons[i].frame.origin.x = CGFloat(100 * (i % 3))
             buttons[i].frame.origin.y = CGFloat(100 * (i / 3))

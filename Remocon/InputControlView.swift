@@ -41,13 +41,13 @@ class InputControlView: UIView {
         upButton.label = ConfigurationService.controlButtons[0]["label"]
         upButton.channel = ConfigurationService.controlButtons[0]["channel"]
         upButton.tag = Int(ConfigurationService.controlButtons[0]["channel"]!)!
-        upButton.addTarget(self, action: "pushedControlButton:", forControlEvents: .TouchUpInside)
+        upButton.addTarget(self, action: #selector(InputControlView.pushedControlButton(_:)), forControlEvents: .TouchUpInside)
         self.addSubview(upButton)
 
         downButton.label = ConfigurationService.controlButtons[1]["label"]
         downButton.channel = ConfigurationService.controlButtons[1]["channel"]
         downButton.tag = Int(ConfigurationService.controlButtons[1]["channel"]!)!
-        downButton.addTarget(self, action: "pushedControlButton:", forControlEvents: .TouchUpInside)
+        downButton.addTarget(self, action: #selector(InputControlView.pushedControlButton(_:)), forControlEvents: .TouchUpInside)
         self.addSubview(downButton)
     }
 

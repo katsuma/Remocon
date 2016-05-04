@@ -51,7 +51,7 @@ class InputControlViewController: UIViewController {
     }
 
     private func initNavigation() {
-        let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "pushedDoneButton:")
+        let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(InputControlViewController.pushedDoneButton(_:)))
         doneButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = doneButton
 

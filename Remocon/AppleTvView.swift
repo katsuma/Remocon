@@ -39,11 +39,11 @@ class AppleTvView: UIView {
     private func commonInit() {
         let controlButtons = ConfigurationService.controlButtons
         let buttons = [upButton, downButton, rightButton, leftButton, okButton, menuButton]
-        for var i = 0; i < buttons.count; i++ {
+        for i in 0 ..< buttons.count {
             buttons[i].label = controlButtons[i]["label"]
             buttons[i].channel = controlButtons[i]["channel"]
             buttons[i].tag = Int(controlButtons[i]["channel"]!)!
-            buttons[i].addTarget(self, action: "pushedButton:", forControlEvents: .TouchUpInside)
+            buttons[i].addTarget(self, action: #selector(AppleTvView.pushedButton(_:)), forControlEvents: .TouchUpInside)
             self.addSubview(buttons[i])
         }
     }

@@ -44,7 +44,7 @@ class ConfigurationService {
     ]
 
     static let iRemocon: Dictionary<String, String> = [
-        "address": "192.168.0.4",
+        "address": "192.168.10.6",
         "port": "51013"
     ]
 }

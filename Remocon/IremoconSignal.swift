@@ -23,8 +23,8 @@ final class IremoconSignal {
     }
 
     internal func send(_ channel: Int) {
-        client.connect(timeout: 10)
-        client.send(str: "*is;\(channel)\r\n")
-        client.close()
+        _ = client.connect(timeout: 10)
+        _ = client.send(str: "*is;\(channel)\r\n")
+        _ = client.close()
     }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 class TvView: UIView {
-    lazy private var buttons: [ChannelButton] = self.createChannelButtons()
-    lazy private var inputButton: UIButton = self.createInputButton()
+    lazy fileprivate var buttons: [ChannelButton] = self.createChannelButtons()
+    lazy fileprivate var inputButton: UIButton = self.createInputButton()
 
     weak var delegate: TvViewDelegate! = nil
 
@@ -30,59 +30,59 @@ class TvView: UIView {
         self.layoutInputButton()
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         for i in 0 ..< buttons.count {
             buttons[i].label = ConfigurationService.channelButtons[i]["label"]
             buttons[i].channel = ConfigurationService.channelButtons[i]["channel"]
             buttons[i].tag = Int(buttons[i].channel)!
-            buttons[i].addTarget(self, action: #selector(TvView.pushedButton(_:)), forControlEvents: .TouchUpInside)
+            buttons[i].addTarget(self, action: #selector(TvView.pushedButton(_:)), for: .touchUpInside)
             self.addSubview(buttons[i])
         }
 
-        inputButton.addTarget(self, action: #selector(TvView.pushedButton(_:)), forControlEvents: .TouchUpInside)
+        inputButton.addTarget(self, action: #selector(TvView.pushedButton(_:)), for: .touchUpInside)
         self.addSubview(inputButton)
     }
 
-    private func createChannelButtons() -> [ChannelButton] {
+    fileprivate func createChannelButtons() -> [ChannelButton] {
         var buttons: [ChannelButton] = []
 
         for _ in 0 ..< ConfigurationService.channelButtons.count {
-            buttons.append(ChannelButton(frame: CGRectZero))
+            buttons.append(ChannelButton(frame: CGRect.zero))
         }
         return buttons
     }
 
-    private func createInputButton() -> UIButton {
-        return UIButton(frame: CGRectMake(0, 0, 50, 35))
+    fileprivate func createInputButton() -> UIButton {
+        return UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 35))
     }
 
-    private func layoutChannelButtons() {
+    fileprivate func layoutChannelButtons() {
         for i in 0 ..< buttons.count {
-            buttons[i].frame.size = CGSizeMake(80, 80)
+            buttons[i].frame.size = CGSize(width: 80, height: 80)
             buttons[i].frame.origin.x = CGFloat(100 * (i % 3))
             buttons[i].frame.origin.y = CGFloat(100 * (i / 3))
         }
     }
 
-    private func layoutInputButton() {
+    fileprivate func layoutInputButton() {
         let inputButtonData: Dictionary<String, String> = ConfigurationService.inputButton
         let buttonTitle: String = inputButtonData["label"]!
-        inputButton.setTitle(buttonTitle, forState: .Normal)
-        inputButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        inputButton.setTitle(buttonTitle, forState: .Highlighted)
-        inputButton.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: .Highlighted)
+        inputButton.setTitle(buttonTitle, for: UIControlState())
+        inputButton.setTitleColor(UIColor.white, for: UIControlState())
+        inputButton.setTitle(buttonTitle, for: .highlighted)
+        inputButton.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), for: .highlighted)
         inputButton.tag = Int(inputButtonData["channel"]!)!
         inputButton.frame.origin.y = 420
         inputButton.frame.origin.x = 115
     }
 
-    internal func pushedButton(sender: UIButton) {
+    internal func pushedButton(_ sender: UIButton) {
         delegate?.buttonDidTap(sender.tag, sender: self)
     }
 
 }
 
 protocol TvViewDelegate: class {
-    func buttonDidTap(channel: Int, sender: TvView)
+    func buttonDidTap(_ channel: Int, sender: TvView)
 }
 

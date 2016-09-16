@@ -9,8 +9,8 @@
 import UIKit
 
 class InputControlView: UIView {
-    lazy private var upButton: ChannelButton = self.createUpButton()
-    lazy private var downButton: ChannelButton = self.createDownButton()
+    lazy fileprivate var upButton: ChannelButton = self.createUpButton()
+    lazy fileprivate var downButton: ChannelButton = self.createDownButton()
 
     weak var delegate: InputControlViewDelegate! = nil
 
@@ -29,44 +29,44 @@ class InputControlView: UIView {
         self.layoutButtons()
     }
 
-    private func createUpButton() -> ChannelButton {
-        return ChannelButton(frame: CGRectZero)
+    fileprivate func createUpButton() -> ChannelButton {
+        return ChannelButton(frame: CGRect.zero)
     }
 
-    private func createDownButton() -> ChannelButton {
-        return ChannelButton(frame: CGRectZero)
+    fileprivate func createDownButton() -> ChannelButton {
+        return ChannelButton(frame: CGRect.zero)
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         upButton.label = ConfigurationService.controlButtons[0]["label"]
         upButton.channel = ConfigurationService.controlButtons[0]["channel"]
         upButton.tag = Int(ConfigurationService.controlButtons[0]["channel"]!)!
-        upButton.addTarget(self, action: #selector(InputControlView.pushedControlButton(_:)), forControlEvents: .TouchUpInside)
+        upButton.addTarget(self, action: #selector(InputControlView.pushedControlButton(_:)), for: .touchUpInside)
         self.addSubview(upButton)
 
         downButton.label = ConfigurationService.controlButtons[1]["label"]
         downButton.channel = ConfigurationService.controlButtons[1]["channel"]
         downButton.tag = Int(ConfigurationService.controlButtons[1]["channel"]!)!
-        downButton.addTarget(self, action: #selector(InputControlView.pushedControlButton(_:)), forControlEvents: .TouchUpInside)
+        downButton.addTarget(self, action: #selector(InputControlView.pushedControlButton(_:)), for: .touchUpInside)
         self.addSubview(downButton)
     }
 
-    private func layoutButtons() {
-        upButton.frame.size = CGSizeMake(80, 80)
+    fileprivate func layoutButtons() {
+        upButton.frame.size = CGSize(width: 80, height: 80)
         upButton.frame.origin.x = CGFloat(150)
         upButton.frame.origin.y = CGFloat(150)
 
-        downButton.frame.size = CGSizeMake(80, 80)
+        downButton.frame.size = CGSize(width: 80, height: 80)
         downButton.frame.origin.x = CGFloat(150)
         downButton.frame.origin.y = CGFloat(250)
     }
 
-    internal func pushedControlButton(sender: ChannelButton) {
+    internal func pushedControlButton(_ sender: ChannelButton) {
         delegate?.buttonDidTap(sender.tag, sender: self)
     }
 }
 
 protocol InputControlViewDelegate: class {
-    func buttonDidTap(channel: Int, sender: InputControlView)
+    func buttonDidTap(_ channel: Int, sender: InputControlView)
 }
 

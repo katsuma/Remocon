@@ -26,30 +26,30 @@ class ChannelButton: UIButton {
         layoutButton()
     }
 
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            if (highlighted) {
+            if (isHighlighted) {
                 self.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
-                self.setTitleColor(UIColor.clearColor(), forState: .Highlighted)
+                self.setTitleColor(UIColor.clear, for: .highlighted)
             } else {
-                self.backgroundColor = UIColor.clearColor()
-                self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                self.backgroundColor = UIColor.clear
+                self.setTitleColor(UIColor.white, for: UIControlState())
             }
         }
     }
 
     // MARK: - Layout view -
-    private func layoutButton() {
+    fileprivate func layoutButton() {
         self.titleLabel!.font = UIFont(name: "LigatureSymbols", size: 24)
-        self.setTitle(label, forState: .Normal)
-        self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        self.setTitle(label, forState: .Highlighted)
-        self.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), forState: .Highlighted)
+        self.setTitle(label, for: UIControlState())
+        self.setTitleColor(UIColor.white, for: UIControlState())
+        self.setTitle(label, for: .highlighted)
+        self.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), for: .highlighted)
 
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 0.5 * self.bounds.size.width
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.whiteColor().CGColor
+        self.layer.borderColor = UIColor.white.cgColor
 
         self.tag = Int(channel)!
     }

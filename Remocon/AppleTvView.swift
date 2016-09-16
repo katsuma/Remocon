@@ -9,15 +9,15 @@
 import UIKit
 
 class AppleTvView: UIView {
-    lazy private var playPauseButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var playPauseButton: ChannelButton = self.createChannelButton()
 
-    lazy private var upButton: ChannelButton = self.createChannelButton()
-    lazy private var downButton: ChannelButton = self.createChannelButton()
-    lazy private var rightButton: ChannelButton = self.createChannelButton()
-    lazy private var leftButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var upButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var downButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var rightButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var leftButton: ChannelButton = self.createChannelButton()
 
-    lazy private var okButton: ChannelButton = self.createChannelButton()
-    lazy private var menuButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var okButton: ChannelButton = self.createChannelButton()
+    lazy fileprivate var menuButton: ChannelButton = self.createChannelButton()
 
     weak var delegate: AppleTvViewDelegate! = nil
 
@@ -36,23 +36,23 @@ class AppleTvView: UIView {
         self.layoutButtons()
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         let controlButtons = ConfigurationService.controlButtons
         let buttons = [upButton, downButton, rightButton, leftButton, okButton, menuButton]
         for i in 0 ..< buttons.count {
             buttons[i].label = controlButtons[i]["label"]
             buttons[i].channel = controlButtons[i]["channel"]
             buttons[i].tag = Int(controlButtons[i]["channel"]!)!
-            buttons[i].addTarget(self, action: #selector(AppleTvView.pushedButton(_:)), forControlEvents: .TouchUpInside)
+            buttons[i].addTarget(self, action: #selector(AppleTvView.pushedButton(_:)), for: .touchUpInside)
             self.addSubview(buttons[i])
         }
     }
 
-    private func createChannelButton() -> ChannelButton {
-        return ChannelButton(frame: CGRectZero)
+    fileprivate func createChannelButton() -> ChannelButton {
+        return ChannelButton(frame: CGRect.zero)
     }
 
-    private func layoutButtons() {
+    fileprivate func layoutButtons() {
         upButton.frame = CGRect(x: 100, y: 0, width: 80, height: 80)
         okButton.frame = CGRect(x: 100, y: 100, width: 80, height: 80)
         downButton.frame = CGRect(x: 100, y: 200, width: 80, height: 80)
@@ -61,7 +61,7 @@ class AppleTvView: UIView {
         leftButton.frame = CGRect(x: 0, y: 100, width: 80, height: 80)
     }
 
-    @IBAction internal func pushedButton(sender: UIButton) {
+    @IBAction internal func pushedButton(_ sender: UIButton) {
         let button = sender as! ChannelButton
         print(button.label, button.tag)
 
@@ -71,6 +71,6 @@ class AppleTvView: UIView {
 }
 
 protocol AppleTvViewDelegate: class {
-    func buttonDidTap(channel: Int, sender: AppleTvView)
+    func buttonDidTap(_ channel: Int, sender: AppleTvView)
 }
 

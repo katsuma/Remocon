@@ -9,8 +9,8 @@
 import UIKit
 
 class InputControlViewController: UIViewController {
-    lazy private var inputControlView: InputControlView = self.createInputControlView()
-    lazy private var signal: IremoconSignal = self.createIremoconSignal()
+    lazy fileprivate var inputControlView: InputControlView = self.createInputControlView()
+    lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
     override func viewDidLoad() {
@@ -27,47 +27,47 @@ class InputControlViewController: UIViewController {
     }
 
     // MARK: - Create subviews -
-    private func createInputControlView() -> InputControlView {
-        return InputControlView(frame: CGRectZero)
+    fileprivate func createInputControlView() -> InputControlView {
+        return InputControlView(frame: CGRect.zero)
     }
 
-    private func initBackground() {
-        self.view.backgroundColor = .clearColor()
-        let visuaEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+    fileprivate func initBackground() {
+        self.view.backgroundColor = .clear
+        let visuaEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         visuaEffectView.frame = self.view.bounds
-        visuaEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        visuaEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         visuaEffectView.translatesAutoresizingMaskIntoConstraints = true
         self.view.addSubview(visuaEffectView)
     }
 
     // MARK: - Layout subviews -
-    private func layoutChannelContainerView() {
-        inputControlView.frame.size = CGSizeMake(360, 480)
+    fileprivate func layoutChannelContainerView() {
+        inputControlView.frame.size = CGSize(width: 360, height: 480)
         inputControlView.center = self.view.center
     }
 
-    private func createIremoconSignal() -> IremoconSignal {
+    fileprivate func createIremoconSignal() -> IremoconSignal {
         return IremoconSignal.sharedInstance
     }
 
-    private func initNavigation() {
-        let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(InputControlViewController.pushedDoneButton(_:)))
-        doneButton.tintColor = UIColor.whiteColor()
+    fileprivate func initNavigation() {
+        let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(InputControlViewController.pushedDoneButton(_:)))
+        doneButton.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = doneButton
 
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.isTranslucent = true
     }
 
-    internal func pushedDoneButton(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    internal func pushedDoneButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
 
 extension InputControlViewController: InputControlViewDelegate {
-    func buttonDidTap(channel: Int, sender: InputControlView) {
+    func buttonDidTap(_ channel: Int, sender: InputControlView) {
         signal.send(channel)
     }
 }

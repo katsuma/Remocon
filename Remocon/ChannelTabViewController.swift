@@ -11,7 +11,7 @@ import IJReachability
 
 
 class ChannelTabViewController: UITabBarController {
-    lazy private var signal: IremoconSignal = self.createIremoconSignal()
+    lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
     override func loadView() {
         super.loadView()
@@ -26,31 +26,31 @@ class ChannelTabViewController: UITabBarController {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         self.checkConnectionReachability()
     }
 
-    private func initTabBarItem() {
+    fileprivate func initTabBarItem() {
         SFKImage.setDefaultFont(UIFont.init(name: "LigatureSymbols", size: 36))
-        SFKImage.setDefaultColor(UIColor.whiteColor())
+        SFKImage.setDefaultColor(UIColor.white)
 
-        UITabBar.appearance().barTintColor = UIColor.whiteColor()
+        UITabBar.appearance().barTintColor = UIColor.white
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage()
 
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.5)], forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: UIControlState.selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.5)], for: UIControlState())
 
-        self.tabBar.tintColor = UIColor.whiteColor()
+        self.tabBar.tintColor = UIColor.white
     }
 
-    private func createIremoconSignal() -> IremoconSignal {
+    fileprivate func createIremoconSignal() -> IremoconSignal {
         return IremoconSignal.sharedInstance
     }
 
-    private func checkConnectionReachability() {
+    fileprivate func checkConnectionReachability() {
         if !IJReachability.isConnectedToNetwork() {
             showConnectionAlert()
             return
@@ -58,19 +58,19 @@ class ChannelTabViewController: UITabBarController {
 
         let statusType: IJReachabilityType = IJReachability.isConnectedToNetworkOfType()
         switch statusType {
-        case .WWAN:
+        case .wwan:
             showConnectionAlert()
-        case .NotConnected:
+        case .notConnected:
             showConnectionAlert()
-        case .WiFi:
+        case .wiFi:
             break
         }
     }
 
-    private func showConnectionAlert() {
-        let alertController: UIAlertController = UIAlertController(title: "iRemocon", message: "Cannot connect to iRemocon", preferredStyle: .Alert)
-        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+    fileprivate func showConnectionAlert() {
+        let alertController: UIAlertController = UIAlertController(title: "iRemocon", message: "Cannot connect to iRemocon", preferredStyle: .alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }

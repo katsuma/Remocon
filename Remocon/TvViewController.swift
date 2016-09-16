@@ -11,8 +11,8 @@ import UIKit
 class TvViewController: UIViewController {
 
     // MARK: - Properties -
-    lazy private var tvView: TvView = self.createTvView()
-    lazy private var signal: IremoconSignal = self.createIremoconSignal()
+    lazy fileprivate var tvView: TvView = self.createTvView()
+    lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
     override func viewDidLoad() {
@@ -29,40 +29,40 @@ class TvViewController: UIViewController {
     }
 
     // MARK: - Create subviews -
-    private func createTvView() -> TvView {
-        return TvView(frame: CGRectZero)
+    fileprivate func createTvView() -> TvView {
+        return TvView(frame: CGRect.zero)
     }
 
-    private func initGradientBackground() {
+    fileprivate func initGradientBackground() {
         let topColor: UIColor = UIColor(red:0.07, green:0.13, blue:0.26, alpha:1)
         let bottomColor: UIColor = UIColor(red:0.54, green:0.74, blue:0.74, alpha:1)
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     // MARK: - Layout subviews -
-    private func layoutTvView() {
-        tvView.frame.size = CGSizeMake(280, 450)
+    fileprivate func layoutTvView() {
+        tvView.frame.size = CGSize(width: 280, height: 450)
         tvView.center = self.view.center
     }
 
-    private func createIremoconSignal() -> IremoconSignal {
+    fileprivate func createIremoconSignal() -> IremoconSignal {
         return IremoconSignal.sharedInstance
     }
 
-    private func showInputModalView() {
+    fileprivate func showInputModalView() {
         let inputControlViewController: UINavigationController = UINavigationController(rootViewController: InputControlViewController())
-        inputControlViewController.modalTransitionStyle = .CoverVertical
-        inputControlViewController.modalPresentationStyle = .OverFullScreen
-        self.presentViewController(inputControlViewController, animated: true, completion: nil)
+        inputControlViewController.modalTransitionStyle = .coverVertical
+        inputControlViewController.modalPresentationStyle = .overFullScreen
+        self.present(inputControlViewController, animated: true, completion: nil)
     }
 }
 
 extension TvViewController: TvViewDelegate {
-    func buttonDidTap(channel: Int, sender: TvView) {
+    func buttonDidTap(_ channel: Int, sender: TvView) {
         print("buttonDidTap on TvView: \(channel)")
         signal.send(channel)
 

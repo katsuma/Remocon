@@ -11,8 +11,8 @@ import UIKit
 class AppleTvViewController: UIViewController {
 
     // MARK: - Properties -
-    lazy private var appleTvView: AppleTvView = self.createAppleTvView()
-    lazy private var signal: IremoconSignal = self.createIremoconSignal()
+    lazy fileprivate var appleTvView: AppleTvView = self.createAppleTvView()
+    lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
     override func viewDidLoad() {
@@ -28,34 +28,34 @@ class AppleTvViewController: UIViewController {
         self.appleTvView.delegate = self
     }
 
-    private func initGradientBackground() {
+    fileprivate func initGradientBackground() {
         let topColor: UIColor = UIColor(red:0.18, green:0.18, blue:0.18, alpha:1)
         let bottomColor: UIColor = UIColor(red:0.76, green:0.76, blue:0.76, alpha:1)
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     // MARK: - Layout subviews -
-    private func createAppleTvView() -> AppleTvView {
-        return AppleTvView(frame: CGRectZero)
+    fileprivate func createAppleTvView() -> AppleTvView {
+        return AppleTvView(frame: CGRect.zero)
     }
 
-    private func layoutAppleTvView() {
+    fileprivate func layoutAppleTvView() {
         appleTvView.frame = CGRect(x: 0, y: 0, width: 280, height: 450)
         appleTvView.center = self.view.center
     }
 
-    private func createIremoconSignal() -> IremoconSignal {
+    fileprivate func createIremoconSignal() -> IremoconSignal {
         return IremoconSignal.sharedInstance
     }
 
 }
 
 extension AppleTvViewController: AppleTvViewDelegate {
-    func buttonDidTap(channel: Int, sender: AppleTvView) {
+    func buttonDidTap(_ channel: Int, sender: AppleTvView) {
         print("buttonDidTap on AppleTvView: \(channel)")
         signal.send(channel)
     }

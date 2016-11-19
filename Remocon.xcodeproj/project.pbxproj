@@ -25,9 +25,6 @@
 		16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09D1B19A75100EB13DA /* InputControlView.swift */; };
 		16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */; };
 		16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */; };
-		16F159341B2D186700D00C03 /* ChannelTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F159331B2D186700D00C03 /* ChannelTabViewController.swift */; };
-		16F159391B2D1B9200D00C03 /* AppleTvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F159381B2D1B9200D00C03 /* AppleTvViewController.swift */; };
-		16F1593B1B2D52E300D00C03 /* AppleTvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1593A1B2D52E300D00C03 /* AppleTvView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +61,6 @@
 		16EFD09D1B19A75100EB13DA /* InputControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlView.swift; sourceTree = "<group>"; };
 		16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlViewController.swift; sourceTree = "<group>"; };
 		16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IremoconSignal.swift; sourceTree = "<group>"; };
-		16F159331B2D186700D00C03 /* ChannelTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTabViewController.swift; sourceTree = "<group>"; };
-		16F159381B2D1B9200D00C03 /* AppleTvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleTvViewController.swift; sourceTree = "<group>"; };
-		16F1593A1B2D52E300D00C03 /* AppleTvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleTvView.swift; sourceTree = "<group>"; };
 		D9DA37189DEF5FACE8889ADF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B95A2EEFE3B2D85ACD524A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F4894536116BF9CB69F00A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,7 +153,6 @@
 				16EFD09D1B19A75100EB13DA /* InputControlView.swift */,
 				16EFD0821B12167900EB13DA /* TvView.swift */,
 				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
-				16F1593A1B2D52E300D00C03 /* AppleTvView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -183,8 +176,6 @@
 			children = (
 				16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */,
 				16EFD05A1B105A7F00EB13DA /* TvViewController.swift */,
-				16F159331B2D186700D00C03 /* ChannelTabViewController.swift */,
-				16F159381B2D1B9200D00C03 /* AppleTvViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -362,15 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EFD05B1B105A7F00EB13DA /* TvViewController.swift in Sources */,
-				16F159341B2D186700D00C03 /* ChannelTabViewController.swift in Sources */,
 				16EFD0831B12167900EB13DA /* TvView.swift in Sources */,
 				16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */,
 				16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */,
-				16F159391B2D1B9200D00C03 /* AppleTvViewController.swift in Sources */,
 				16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */,
 				16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */,
 				16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */,
-				16F1593B1B2D52E300D00C03 /* AppleTvView.swift in Sources */,
 				16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */,
 				16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */,
 				161DA87E1BE5F1FC00705004 /* SFKImage.m in Sources */,

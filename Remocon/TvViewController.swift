@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IJReachability
 
 class TvViewController: UIViewController {
 
@@ -26,6 +27,12 @@ class TvViewController: UIViewController {
         self.layoutTvView()
 
         self.tvView.delegate = self
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.checkConnectionReachability()
     }
 
     // MARK: - Create subviews -
@@ -59,6 +66,31 @@ class TvViewController: UIViewController {
         inputControlViewController.modalPresentationStyle = .overFullScreen
         self.present(inputControlViewController, animated: true, completion: nil)
     }
+
+    fileprivate func checkConnectionReachability() {
+        if !IJReachability.isConnectedToNetwork() {
+            showConnectionAlert()
+            return
+        }
+
+        let statusType: IJReachabilityType = IJReachability.isConnectedToNetworkOfType()
+        switch statusType {
+        case .wwan:
+            showConnectionAlert()
+        case .notConnected:
+            showConnectionAlert()
+        case .wiFi:
+            break
+        }
+    }
+
+    fileprivate func showConnectionAlert() {
+        let alertController: UIAlertController = UIAlertController(title: "iRemocon", message: "Cannot connect to iRemocon", preferredStyle: .alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
 }
 
 extension TvViewController: TvViewDelegate {

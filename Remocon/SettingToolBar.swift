@@ -21,6 +21,10 @@ class SettingToolBar: UIToolbar {
         self.commonInit()
     }
 
+    override func draw(_ rect: CGRect) {
+        self.isHidden = false
+    }
+
     fileprivate func commonInit() {
         self.setBackgroundImage(UIImage(),
                                         forToolbarPosition: .any,

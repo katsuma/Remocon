@@ -13,6 +13,7 @@ class TvViewController: UIViewController {
 
     // MARK: - Properties -
     lazy fileprivate var tvView: TvView = self.createTvView()
+    lazy fileprivate var settingToolBar: SettingToolBar = self.createSettingToolBar()
     lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
     // MARK: - Life cycle events -
@@ -37,7 +38,11 @@ class TvViewController: UIViewController {
 
     // MARK: - Create subviews -
     fileprivate func createTvView() -> TvView {
-        return TvView(frame: CGRect.zero)
+        return TvView(frame: .zero)
+    }
+
+    fileprivate func createSettingToolBar() ->  SettingToolBar {
+        return SettingToolBar(frame: .zero)
     }
 
     fileprivate func initGradientBackground() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q4n-rv-dE3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nsz-9p-fYH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,37 +8,86 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tv View Controller-->
-        <scene sceneID="AW4-Sl-WqR">
+        <!--Navigation Controller-->
+        <scene sceneID="3bM-6j-3Gh">
             <objects>
-                <viewController id="Q4n-rv-dE3" customClass="TvViewController" customModule="Remocon" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="nsz-9p-fYH" sceneMemberID="viewController">
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7xE-jH-s8j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DZh-id-R4f" kind="relationship" relationship="rootViewController" id="J2B-QF-Gsk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8d-Un-p25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242" y="407"/>
+        </scene>
+        <!--Tv View Controller-->
+        <scene sceneID="UdT-PS-8NF">
+            <objects>
+                <viewController id="DZh-id-R4f" customClass="TvViewController" customModule="Remocon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W8W-dz-qIs"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Ed-Qo-jVT"/>
+                        <viewControllerLayoutGuide type="top" id="onp-qJ-JYM"/>
+                        <viewControllerLayoutGuide type="bottom" id="HGy-J7-AF5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Ga-vT-tFN">
+                    <view key="view" contentMode="scaleToFill" id="oMn-Ir-ALe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWM-yc-FCV" customClass="SettingToolBar" customModule="Remocon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem style="plain" id="Wkf-bS-aOf">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HCx-Cc-cwl" customClass="SettingButton" customModule="Remocon" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="7" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </button>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="g0B-uV-tkQ">
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="oy7-IE-Lma">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Oub-Od-NAY" kind="presentation" id="xsQ-W3-EMO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ih4-LG-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSn-AZ-Nrl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="379"/>
+            <point key="canvasLocation" x="2050" y="413"/>
+        </scene>
+        <!--Setting Navigation-->
+        <scene sceneID="Qhn-nt-NmR">
+            <objects>
+                <navigationController title="Setting Navigation" id="Oub-Od-NAY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EFn-jn-VTg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="05k-ze-Dus" kind="relationship" relationship="rootViewController" id="xDd-IA-NMX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6B-c2-I3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2938" y="412"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="1sa-p4-atF">
+            <objects>
+                <viewController id="05k-ze-Dus" customClass="SettingViewController" customModule="Remocon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rOf-dt-Vzk"/>
+                        <viewControllerLayoutGuide type="bottom" id="DQb-to-3SB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZeI-zL-Ivb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setting" id="TCz-WA-0WC">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="IZ2-nw-Kgd"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d72-SQ-jFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3834" y="412"/>
         </scene>
     </scenes>
 </document>

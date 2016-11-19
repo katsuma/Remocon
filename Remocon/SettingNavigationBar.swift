@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingToolBar: UIToolbar {
+class SettingToolBar: UINavigationBar {
     lazy fileprivate var settingButton: UIButton = self.createSettingButton()
 
     required override init(frame: CGRect) {
@@ -26,11 +26,7 @@ class SettingToolBar: UIToolbar {
     }
 
     fileprivate func commonInit() {
-        self.setBackgroundImage(UIImage(),
-                                        forToolbarPosition: .any,
-                                        barMetrics: .default)
-        self.setShadowImage(UIImage(), forToolbarPosition: .any)
-
+        self.backgroundColor = UIColor.clear
         self.addSubview(settingButton)
     }
 

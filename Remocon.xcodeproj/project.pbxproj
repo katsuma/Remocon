@@ -10,7 +10,8 @@
 		0F713DE13208C9C307B8759E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B95A2EEFE3B2D85ACD524A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		161DA87E1BE5F1FC00705004 /* SFKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 161DA87D1BE5F1FC00705004 /* SFKImage.m */; };
 		16B7486A1DE0911300FC1226 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B748691DE0911300FC1226 /* SettingButton.swift */; };
-		16B7486C1DE0967E00FC1226 /* SettingToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7486B1DE0967E00FC1226 /* SettingToolBar.swift */; };
+		16B7486C1DE0967E00FC1226 /* SettingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7486B1DE0967E00FC1226 /* SettingNavigationBar.swift */; };
+		16B7486E1DE0A16E00FC1226 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7486D1DE0A16E00FC1226 /* SettingViewController.swift */; };
 		16EFD0591B105A7F00EB13DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0581B105A7F00EB13DA /* AppDelegate.swift */; };
 		16EFD05B1B105A7F00EB13DA /* TvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD05A1B105A7F00EB13DA /* TvViewController.swift */; };
 		16EFD05E1B105A7F00EB13DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD05C1B105A7F00EB13DA /* Main.storyboard */; };
@@ -43,7 +44,8 @@
 		161DA87C1BE5F1FC00705004 /* SFKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKImage.h; sourceTree = "<group>"; };
 		161DA87D1BE5F1FC00705004 /* SFKImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKImage.m; sourceTree = "<group>"; };
 		16B748691DE0911300FC1226 /* SettingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
-		16B7486B1DE0967E00FC1226 /* SettingToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingToolBar.swift; sourceTree = "<group>"; };
+		16B7486B1DE0967E00FC1226 /* SettingNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNavigationBar.swift; sourceTree = "<group>"; };
+		16B7486D1DE0A16E00FC1226 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		16EFD0531B105A7F00EB13DA /* Remocon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remocon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EFD0571B105A7F00EB13DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EFD0581B105A7F00EB13DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 				16EFD0821B12167900EB13DA /* TvView.swift */,
 				16EFD07A1B10C64900EB13DA /* ChannelButton.swift */,
 				16B748691DE0911300FC1226 /* SettingButton.swift */,
-				16B7486B1DE0967E00FC1226 /* SettingToolBar.swift */,
+				16B7486B1DE0967E00FC1226 /* SettingNavigationBar.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -182,6 +184,7 @@
 			children = (
 				16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */,
 				16EFD05A1B105A7F00EB13DA /* TvViewController.swift */,
+				16B7486D1DE0A16E00FC1226 /* SettingViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -362,7 +365,8 @@
 				16EFD0831B12167900EB13DA /* TvView.swift in Sources */,
 				16B7486A1DE0911300FC1226 /* SettingButton.swift in Sources */,
 				16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */,
-				16B7486C1DE0967E00FC1226 /* SettingToolBar.swift in Sources */,
+				16B7486C1DE0967E00FC1226 /* SettingNavigationBar.swift in Sources */,
+				16B7486E1DE0A16E00FC1226 /* SettingViewController.swift in Sources */,
 				16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */,
 				16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */,
 				16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */,

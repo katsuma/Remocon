@@ -11,7 +11,7 @@ import UIKit
 class TvView: UIView {
     lazy fileprivate var buttons: [ChannelButton] = self.createChannelButtons()
     lazy fileprivate var inputButton: UIButton = self.createInputButton()
-    lazy fileprivate var settingToolBar: SettingToolBar = self.createSettingToolBar()
+    lazy fileprivate var navigationBar: UINavigationBar = self.createNavigationBar()
 
     weak var delegate: TvViewDelegate! = nil
 
@@ -57,8 +57,8 @@ class TvView: UIView {
         return UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 35))
     }
 
-    fileprivate func createSettingToolBar() ->  SettingToolBar {
-        return SettingToolBar(frame: .zero)
+    fileprivate func createNavigationBar() -> UINavigationBar {
+        return UINavigationBar(frame: .zero)
     }
 
     fileprivate func layoutChannelButtons() {

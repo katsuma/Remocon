@@ -9,5 +9,18 @@
 import Foundation
 
 class SettingViewController: UIViewController {
+    // MARK: - Properties -
+    @IBOutlet var settingView: SettingView!
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.settingView.delegate = self
+    }
+}
+
+
+extension SettingViewController: SettingViewDelegate {
+    func buttonDidTap(_ channel: Int, sender: SettingView) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

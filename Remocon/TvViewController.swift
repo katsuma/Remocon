@@ -18,9 +18,9 @@ class TvViewController: UIViewController {
     // MARK: - Life cycle events -
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initNavigationItem()
         self.initGradientBackground()
         self.view.addSubview(tvView)
+        self.initNavigationItem()
     }
 
     override func viewDidLayoutSubviews() {
@@ -52,14 +52,7 @@ class TvViewController: UIViewController {
     }
 
     fileprivate func initNavigationItem() {
-        let navigationBar: UINavigationBar = self.navigationController!.navigationBar
-
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.tintColor = .white
-        navigationBar.barTintColor = .clear
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-
+        self.navigationController!.navigationBar.isHidden = false
     }
 
     // MARK: - Layout subviews -

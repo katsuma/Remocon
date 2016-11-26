@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
 class ConfigurationService {
     static let inputModalChannel: Int = 1261
+    fileprivate static let realm = try! Realm()
 
     static let channelButtons: [Dictionary<String, String>] = [
         ["label": "1", "channel": "1201"],
@@ -43,8 +45,33 @@ class ConfigurationService {
         ["label": "menu",  "channel": "1267"],
     ]
 
-    static let iRemocon: Dictionary<String, String> = [
-        "address": "192.168.11.3",
+    static var iRemocon: Dictionary<String, String> = [
+        "address": loadRemoconAddress()!,
         "port": "51013"
     ]
+
+    fileprivate static func loadRemoconAddress() -> String? {
+        if let localSetting: LocalSetting = realm.objects(LocalSetting.self).last {
+            return localSetting.remoconAddress;
+        } else {
+            let localSetting: LocalSetting = LocalSetting()
+            try! realm.write {
+                realm.add(localSetting)
+            }
+            return localSetting.remoconAddress;
+        }
+    }
+
+    static func updateRemoconAddress(address: String) {
+        if address == iRemocon["address"] {
+            return
+        }
+
+        let localSetting: LocalSetting? = realm.objects(LocalSetting.self).last
+        try! realm.write {
+            localSetting?.remoconAddress = address
+            iRemocon["address"] = address
+            IremoconSignal.sharedInstance.updateTCPClient()
+        }
+    }
 }

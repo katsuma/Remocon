@@ -21,6 +21,7 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: SettingViewDelegate {
     func buttonDidTap(_ channel: Int, sender: SettingView) {
+        ConfigurationService.updateRemoconAddress(address: sender.addressTextField.text!)
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -19,7 +19,12 @@ final class IremoconSignal {
         let addr: String = ConfigurationService.iRemocon["address"]!
         let port: String = ConfigurationService.iRemocon["port"]!
 
+        print("CreateTCP Client by \(addr):\(port)")
         return TCPClient(addr: addr, port: Int(port)!)
+    }
+
+    internal func updateTCPClient() {
+        client = createTCPClient()
     }
 
     internal func send(_ channel: Int) {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IJReachability
 
 class TvViewController: UIViewController {
 
@@ -73,19 +72,14 @@ class TvViewController: UIViewController {
     }
 
     fileprivate func checkConnectionReachability() {
-        if !IJReachability.isConnectedToNetwork() {
-            showConnectionAlert()
-            return
-        }
-
-        let statusType: IJReachabilityType = IJReachability.isConnectedToNetworkOfType()
-        switch statusType {
-        case .wwan:
-            showConnectionAlert()
-        case .notConnected:
-            showConnectionAlert()
-        case .wiFi:
-            break
+        let connectionStatus = Reach().connectionStatus()
+        switch connectionStatus {
+            case .unknown, .offline:
+                showConnectionAlert()
+            case .online(.wwan):
+                showConnectionAlert()
+            case .online(.wiFi):
+                break
         }
     }
 

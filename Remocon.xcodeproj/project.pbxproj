@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F713DE13208C9C307B8759E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B95A2EEFE3B2D85ACD524A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		161DA87E1BE5F1FC00705004 /* SFKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 161DA87D1BE5F1FC00705004 /* SFKImage.m */; };
+		161DAA461DE967BD002F5A80 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161DAA451DE967BD002F5A80 /* Reach.swift */; };
 		16B7486E1DE0A16E00FC1226 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7486D1DE0A16E00FC1226 /* SettingViewController.swift */; };
 		16B748701DE135A700FC1226 /* TvNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7486F1DE135A700FC1226 /* TvNavigationController.swift */; };
 		16B748741DE5800900FC1226 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B748731DE5800900FC1226 /* SettingView.swift */; };
@@ -28,6 +28,7 @@
 		16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09D1B19A75100EB13DA /* InputControlView.swift */; };
 		16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */; };
 		16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */; };
+		4062C326A24E8F0A2FF2ED5D /* Pods_Remocon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B531EA0BCCD6CE9D1D71F5CC /* Pods_Remocon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		161DA87C1BE5F1FC00705004 /* SFKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKImage.h; sourceTree = "<group>"; };
 		161DA87D1BE5F1FC00705004 /* SFKImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKImage.m; sourceTree = "<group>"; };
+		161DAA451DE967BD002F5A80 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		16B7486D1DE0A16E00FC1226 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		16B7486F1DE135A700FC1226 /* TvNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvNavigationController.swift; sourceTree = "<group>"; };
 		16B748731DE5800900FC1226 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -67,9 +69,10 @@
 		16EFD09D1B19A75100EB13DA /* InputControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlView.swift; sourceTree = "<group>"; };
 		16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlViewController.swift; sourceTree = "<group>"; };
 		16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IremoconSignal.swift; sourceTree = "<group>"; };
-		D9DA37189DEF5FACE8889ADF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8791A045653055B16B033B1A /* Pods-Remocon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remocon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Remocon/Pods-Remocon.release.xcconfig"; sourceTree = "<group>"; };
+		B531EA0BCCD6CE9D1D71F5CC /* Pods_Remocon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remocon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D937AFCAE449ADC9BF65AD64 /* Pods-Remocon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remocon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remocon/Pods-Remocon.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B95A2EEFE3B2D85ACD524A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8F4894536116BF9CB69F00A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F713DE13208C9C307B8759E /* Pods.framework in Frameworks */,
+				4062C326A24E8F0A2FF2ED5D /* Pods_Remocon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +100,8 @@
 				16EFD0551B105A7F00EB13DA /* Remocon */,
 				16EFD06B1B105A7F00EB13DA /* RemoconTests */,
 				16EFD0541B105A7F00EB13DA /* Products */,
-				421EECA00329387EF73EE29F /* Pods */,
 				CB54D8C4E3760550CD01760F /* Frameworks */,
+				C6F1E4E65747C9B28F7BBC17 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +170,7 @@
 		16F159361B2D18E900D00C03 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				161DAA451DE967BD002F5A80 /* Reach.swift */,
 				161DA87C1BE5F1FC00705004 /* SFKImage.h */,
 				161DA87D1BE5F1FC00705004 /* SFKImage.m */,
 				16EFD0991B123BD900EB13DA /* ysocket.swift */,
@@ -189,11 +193,11 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
-		421EECA00329387EF73EE29F /* Pods */ = {
+		C6F1E4E65747C9B28F7BBC17 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D9DA37189DEF5FACE8889ADF /* Pods.debug.xcconfig */,
-				E8F4894536116BF9CB69F00A /* Pods.release.xcconfig */,
+				D937AFCAE449ADC9BF65AD64 /* Pods-Remocon.debug.xcconfig */,
+				8791A045653055B16B033B1A /* Pods-Remocon.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				E6B95A2EEFE3B2D85ACD524A /* Pods.framework */,
+				B531EA0BCCD6CE9D1D71F5CC /* Pods_Remocon.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,12 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16EFD0721B105A7F00EB13DA /* Build configuration list for PBXNativeTarget "Remocon" */;
 			buildPhases = (
-				F185D8F04D8689EB756226A4 /* Check Pods Manifest.lock */,
+				D87414D9CE5ACA40DF8B92B7 /* [CP] Check Pods Manifest.lock */,
 				16EFD04F1B105A7F00EB13DA /* Sources */,
 				16EFD0501B105A7F00EB13DA /* Frameworks */,
 				16EFD0511B105A7F00EB13DA /* Resources */,
-				14B8B7BE9E681EC80BC40CEE /* Embed Pods Frameworks */,
-				FA4882C5815C97DF0F4E4431 /* Copy Pods Resources */,
+				8E0CCA1F583D7976D178F4E3 /* [CP] Embed Pods Frameworks */,
+				01AE28AEE6AA884C276FA56D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,49 +314,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14B8B7BE9E681EC80BC40CEE /* Embed Pods Frameworks */ = {
+		01AE28AEE6AA884C276FA56D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Remocon/Pods-Remocon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F185D8F04D8689EB756226A4 /* Check Pods Manifest.lock */ = {
+		8E0CCA1F583D7976D178F4E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Remocon/Pods-Remocon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA4882C5815C97DF0F4E4431 /* Copy Pods Resources */ = {
+		D87414D9CE5ACA40DF8B92B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -370,6 +375,7 @@
 				16B748741DE5800900FC1226 /* SettingView.swift in Sources */,
 				16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */,
 				16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */,
+				161DAA461DE967BD002F5A80 /* Reach.swift in Sources */,
 				16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */,
 				16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */,
 				16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */,
@@ -508,7 +514,7 @@
 		};
 		16EFD0731B105A7F00EB13DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9DA37189DEF5FACE8889ADF /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D937AFCAE449ADC9BF65AD64 /* Pods-Remocon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -527,7 +533,7 @@
 		};
 		16EFD0741B105A7F00EB13DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8F4894536116BF9CB69F00A /* Pods.release.xcconfig */;
+			baseConfigurationReference = 8791A045653055B16B033B1A /* Pods-Remocon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

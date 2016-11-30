@@ -23,9 +23,6 @@
 		16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */; };
 		16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */; };
 		16EFD0831B12167900EB13DA /* TvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0821B12167900EB13DA /* TvView.swift */; };
-		16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0951B123BB000EB13DA /* ytcpsocket.c */; };
-		16EFD0981B123BB000EB13DA /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0961B123BB000EB13DA /* ytcpsocket.swift */; };
-		16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0991B123BD900EB13DA /* ysocket.swift */; };
 		16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09D1B19A75100EB13DA /* InputControlView.swift */; };
 		16EFD0A01B19AE6000EB13DA /* InputControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */; };
 		16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */; };
@@ -65,9 +62,6 @@
 		16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		16EFD0821B12167900EB13DA /* TvView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvView.swift; sourceTree = "<group>"; };
 		16EFD0941B123BAF00EB13DA /* Remocon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remocon-Bridging-Header.h"; sourceTree = "<group>"; };
-		16EFD0951B123BB000EB13DA /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
-		16EFD0961B123BB000EB13DA /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
-		16EFD0991B123BD900EB13DA /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
 		16EFD09D1B19A75100EB13DA /* InputControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlView.swift; sourceTree = "<group>"; };
 		16EFD09F1B19AE6000EB13DA /* InputControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputControlViewController.swift; sourceTree = "<group>"; };
 		16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IremoconSignal.swift; sourceTree = "<group>"; };
@@ -184,9 +178,6 @@
 				161DAA451DE967BD002F5A80 /* Reach.swift */,
 				161DA87C1BE5F1FC00705004 /* SFKImage.h */,
 				161DA87D1BE5F1FC00705004 /* SFKImage.m */,
-				16EFD0991B123BD900EB13DA /* ysocket.swift */,
-				16EFD0951B123BB000EB13DA /* ytcpsocket.c */,
-				16EFD0961B123BB000EB13DA /* ytcpsocket.swift */,
 				16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */,
 				16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */,
 			);
@@ -379,7 +370,6 @@
 			files = (
 				16EFD05B1B105A7F00EB13DA /* TvViewController.swift in Sources */,
 				16EFD0831B12167900EB13DA /* TvView.swift in Sources */,
-				16EFD09A1B123BD900EB13DA /* ysocket.swift in Sources */,
 				16B748701DE135A700FC1226 /* TvNavigationController.swift in Sources */,
 				16B7486E1DE0A16E00FC1226 /* SettingViewController.swift in Sources */,
 				16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */,
@@ -390,9 +380,7 @@
 				161DAA461DE967BD002F5A80 /* Reach.swift in Sources */,
 				16EFD09E1B19A75100EB13DA /* InputControlView.swift in Sources */,
 				16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */,
-				16EFD0971B123BB000EB13DA /* ytcpsocket.c in Sources */,
 				161DA87E1BE5F1FC00705004 /* SFKImage.m in Sources */,
-				16EFD0981B123BB000EB13DA /* ytcpsocket.swift in Sources */,
 				16EFD0591B105A7F00EB13DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

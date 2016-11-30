@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSocket
 
 final class IremoconSignal {
     lazy fileprivate var client: TCPClient = self.createTCPClient()
@@ -19,8 +20,7 @@ final class IremoconSignal {
         let addr: String = ConfigurationService.iRemocon["address"]!
         let port: String = ConfigurationService.iRemocon["port"]!
 
-        print("CreateTCP Client by \(addr):\(port)")
-        return TCPClient(addr: addr, port: Int(port)!)
+        return TCPClient(address: addr, port: Int32(port)!)
     }
 
     internal func updateTCPClient() {
@@ -29,7 +29,7 @@ final class IremoconSignal {
 
     internal func send(_ channel: Int) {
         _ = client.connect(timeout: 10)
-        _ = client.send(str: "*is;\(channel)\r\n")
+        _ = client.send(string: "*is;\(channel)\r\n")
         _ = client.close()
     }
 }

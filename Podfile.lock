@@ -4,14 +4,26 @@ PODS:
   - Realm/Headers (2.1.0)
   - RealmSwift (2.1.0):
     - Realm (= 2.1.0)
+  - SwiftSocket (2.0)
 
 DEPENDENCIES:
   - RealmSwift
+  - SwiftSocket (from `https://github.com/swiftsocket/SwiftSocket.git`)
+
+EXTERNAL SOURCES:
+  SwiftSocket:
+    :git: https://github.com/swiftsocket/SwiftSocket.git
+
+CHECKOUT OPTIONS:
+  SwiftSocket:
+    :commit: 46cdb113bf62dbdd1bb3c5d3a9b4b140b38ef2e7
+    :git: https://github.com/swiftsocket/SwiftSocket.git
 
 SPEC CHECKSUMS:
   Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
   RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
+  SwiftSocket: 258fa93935dd3cd06e4cdf15691796075a114953
 
-PODFILE CHECKSUM: 55a85869e3d593e822a33ca722394898005cda90
+PODFILE CHECKSUM: 1fb374bca95889c542c95a96643f0d35cb338637
 
 COCOAPODS: 1.1.1

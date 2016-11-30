@@ -2,6 +2,7 @@ platform :ios, "8.0"
 use_frameworks!
 target "Remocon" do
   pod 'RealmSwift'
+  pod 'SwiftSocket', git: 'https://github.com/swiftsocket/SwiftSocket.git'
 end
 
 post_install do |installer|

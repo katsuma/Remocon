@@ -61,7 +61,7 @@ class InputControlView: UIView {
         downButton.frame.origin.y = CGFloat(250)
     }
 
-    internal func pushedControlButton(_ sender: ChannelButton) {
+    @objc internal func pushedControlButton(_ sender: ChannelButton) {
         delegate?.buttonDidTap(sender.tag, sender: self)
     }
 }

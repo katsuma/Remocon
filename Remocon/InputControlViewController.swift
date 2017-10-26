@@ -60,7 +60,7 @@ class InputControlViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
     }
 
-    internal func pushedDoneButton(_ sender: UIButton) {
+    @objc internal func pushedDoneButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
 

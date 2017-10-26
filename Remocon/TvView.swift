@@ -81,7 +81,7 @@ class TvView: UIView {
         inputButton.frame.origin.x = 115
     }
 
-    internal func pushedButton(_ sender: UIButton) {
+    @objc internal func pushedButton(_ sender: UIButton) {
         delegate?.buttonDidTap(sender.tag, sender: self)
     }
 

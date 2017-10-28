@@ -18,7 +18,6 @@
 		16EFD05E1B105A7F00EB13DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD05C1B105A7F00EB13DA /* Main.storyboard */; };
 		16EFD0601B105A7F00EB13DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD05F1B105A7F00EB13DA /* Images.xcassets */; };
 		16EFD0631B105A7F00EB13DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD0611B105A7F00EB13DA /* LaunchScreen.xib */; };
-		16EFD06F1B105A7F00EB13DA /* RemoconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD06E1B105A7F00EB13DA /* RemoconTests.swift */; };
 		16EFD07B1B10C64900EB13DA /* ChannelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07A1B10C64900EB13DA /* ChannelButton.swift */; };
 		16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EFD07C1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf */; };
 		16EFD07F1B11E9D500EB13DA /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD07E1B11E9D500EB13DA /* ConfigurationService.swift */; };
@@ -28,16 +27,6 @@
 		16EFD0A21B19B30C00EB13DA /* IremoconSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD0A11B19B30C00EB13DA /* IremoconSignal.swift */; };
 		4062C326A24E8F0A2FF2ED5D /* Pods_Remocon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B531EA0BCCD6CE9D1D71F5CC /* Pods_Remocon.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		16EFD0691B105A7F00EB13DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 16EFD04B1B105A7F00EB13DA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 16EFD0521B105A7F00EB13DA;
-			remoteInfo = Remocon;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		161DA87C1BE5F1FC00705004 /* SFKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKImage.h; sourceTree = "<group>"; };
@@ -54,7 +43,6 @@
 		16EFD05D1B105A7F00EB13DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16EFD05F1B105A7F00EB13DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16EFD0621B105A7F00EB13DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		16EFD0681B105A7F00EB13DA /* RemoconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EFD06D1B105A7F00EB13DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EFD06E1B105A7F00EB13DA /* RemoconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoconTests.swift; sourceTree = "<group>"; };
 		16EFD07A1B10C64900EB13DA /* ChannelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelButton.swift; sourceTree = "<group>"; };
@@ -77,13 +65,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4062C326A24E8F0A2FF2ED5D /* Pods_Remocon.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		16EFD0651B105A7F00EB13DA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				16EFD0531B105A7F00EB13DA /* Remocon.app */,
-				16EFD0681B105A7F00EB13DA /* RemoconTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,24 +216,6 @@
 			productReference = 16EFD0531B105A7F00EB13DA /* Remocon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		16EFD0671B105A7F00EB13DA /* RemoconTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 16EFD0751B105A7F00EB13DA /* Build configuration list for PBXNativeTarget "RemoconTests" */;
-			buildPhases = (
-				16EFD0641B105A7F00EB13DA /* Sources */,
-				16EFD0651B105A7F00EB13DA /* Frameworks */,
-				16EFD0661B105A7F00EB13DA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				16EFD06A1B105A7F00EB13DA /* PBXTargetDependency */,
-			);
-			name = RemoconTests;
-			productName = RemoconTests;
-			productReference = 16EFD0681B105A7F00EB13DA /* RemoconTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -268,12 +230,6 @@
 						DevelopmentTeam = 72LKS454FJ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
-					};
-					16EFD0671B105A7F00EB13DA = {
-						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 72LKS454FJ;
-						LastSwiftMigration = 0800;
-						TestTargetID = 16EFD0521B105A7F00EB13DA;
 					};
 				};
 			};
@@ -291,7 +247,6 @@
 			projectRoot = "";
 			targets = (
 				16EFD0521B105A7F00EB13DA /* Remocon */,
-				16EFD0671B105A7F00EB13DA /* RemoconTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +260,6 @@
 				16EFD07D1B11CFDF00EB13DA /* LigatureSymbols-2.11.ttf in Resources */,
 				16EFD0631B105A7F00EB13DA /* LaunchScreen.xib in Resources */,
 				16EFD0601B105A7F00EB13DA /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		16EFD0661B105A7F00EB13DA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,23 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16EFD0641B105A7F00EB13DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				16EFD06F1B105A7F00EB13DA /* RemoconTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		16EFD06A1B105A7F00EB13DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 16EFD0521B105A7F00EB13DA /* Remocon */;
-			targetProxy = 16EFD0691B105A7F00EB13DA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		16EFD05C1B105A7F00EB13DA /* Main.storyboard */ = {
@@ -529,6 +461,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Remocon/Remocon-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -585,40 +518,6 @@
 			};
 			name = Release;
 		};
-		16EFD0761B105A7F00EB13DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 72LKS454FJ;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RemoconTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "tv.katsuma.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remocon.app/Remocon";
-			};
-			name = Debug;
-		};
-		16EFD0771B105A7F00EB13DA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 72LKS454FJ;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = RemoconTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "tv.katsuma.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remocon.app/Remocon";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -636,15 +535,6 @@
 			buildConfigurations = (
 				16EFD0731B105A7F00EB13DA /* Debug */,
 				16EFD0741B105A7F00EB13DA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		16EFD0751B105A7F00EB13DA /* Build configuration list for PBXNativeTarget "RemoconTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				16EFD0761B105A7F00EB13DA /* Debug */,
-				16EFD0771B105A7F00EB13DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

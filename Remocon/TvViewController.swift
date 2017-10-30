@@ -14,12 +14,16 @@ class TvViewController: UIViewController {
     lazy fileprivate var tvView: TvView = self.createTvView()
     lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
+    private var isHiddenHomeIndicator: Bool = true
+
     // MARK: - Life cycle events -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initGradientBackground()
         self.view.addSubview(tvView)
         self.initNavigationItem()
+
+        if #available(iOS 11, *) { setNeedsUpdateOfHomeIndicatorAutoHidden()  }
     }
 
     override func viewDidLayoutSubviews() {
@@ -90,6 +94,10 @@ class TvViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
+    @available(iOS 11, *)
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
+        return isHiddenHomeIndicator
+    }
 }
 
 extension TvViewController: TvViewDelegate {

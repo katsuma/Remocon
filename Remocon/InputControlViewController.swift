@@ -11,12 +11,14 @@ import UIKit
 class InputControlViewController: UIViewController {
     lazy fileprivate var inputControlView: InputControlView = self.createInputControlView()
     lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
+    private var isHiddenHomeIndicator: Bool = true
 
     // MARK: - Life cycle events -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initBackground()
         self.view.addSubview(inputControlView)
+        if #available(iOS 11, *) { setNeedsUpdateOfHomeIndicatorAutoHidden()  }
     }
 
     override func viewDidLayoutSubviews() {
@@ -64,6 +66,10 @@ class InputControlViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @available(iOS 11, *)
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
+        return isHiddenHomeIndicator
+    }
 }
 
 extension InputControlViewController: InputControlViewDelegate {

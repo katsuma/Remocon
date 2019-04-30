@@ -33,7 +33,7 @@ class ChannelButton: UIButton {
                 self.setTitleColor(UIColor.clear, for: .highlighted)
             } else {
                 self.backgroundColor = UIColor.clear
-                self.setTitleColor(UIColor.white, for: UIControlState())
+                self.setTitleColor(UIColor.white, for: UIControl.State())
             }
         }
     }
@@ -41,8 +41,8 @@ class ChannelButton: UIButton {
     // MARK: - Layout view -
     fileprivate func layoutButton() {
         self.titleLabel!.font = UIFont(name: "LigatureSymbols", size: 24)
-        self.setTitle(label, for: UIControlState())
-        self.setTitleColor(UIColor.white, for: UIControlState())
+        self.setTitle(label, for: UIControl.State())
+        self.setTitleColor(UIColor.white, for: UIControl.State())
         self.setTitle(label, for: .highlighted)
         self.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), for: .highlighted)
 

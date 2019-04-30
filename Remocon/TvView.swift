@@ -72,8 +72,8 @@ class TvView: UIView {
     fileprivate func layoutInputButton() {
         let inputButtonData: Dictionary<String, String> = ConfigurationService.inputButton
         let buttonTitle: String = inputButtonData["label"]!
-        inputButton.setTitle(buttonTitle, for: UIControlState())
-        inputButton.setTitleColor(UIColor.white, for: UIControlState())
+        inputButton.setTitle(buttonTitle, for: UIControl.State())
+        inputButton.setTitleColor(UIColor.white, for: UIControl.State())
         inputButton.setTitle(buttonTitle, for: .highlighted)
         inputButton.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7), for: .highlighted)
         inputButton.tag = Int(inputButtonData["channel"]!)!

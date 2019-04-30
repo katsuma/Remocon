@@ -22,6 +22,6 @@ class TvNavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.tintColor = .white
         navigationBar.barTintColor = .clear
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }

@@ -95,7 +95,7 @@ class TvViewController: UIViewController {
     }
 
     @available(iOS 11, *)
-    override func prefersHomeIndicatorAutoHidden() -> Bool {
+    override var prefersHomeIndicatorAutoHidden: Bool {
         return isHiddenHomeIndicator
     }
 }

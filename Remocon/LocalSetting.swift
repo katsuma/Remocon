@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class LocalSetting: Object {
-    @objc dynamic var remoconAddress:String = "192.168.11.3";
+    @objc dynamic var remoconAddress:String = "192.168.10.6";
 }

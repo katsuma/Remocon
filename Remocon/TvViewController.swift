@@ -22,8 +22,6 @@ class TvViewController: UIViewController {
         self.initGradientBackground()
         self.view.addSubview(tvView)
         self.initNavigationItem()
-
-        if #available(iOS 11, *) { setNeedsUpdateOfHomeIndicatorAutoHidden()  }
     }
 
     override func viewDidLayoutSubviews() {
@@ -45,8 +43,8 @@ class TvViewController: UIViewController {
     }
 
     fileprivate func initGradientBackground() {
-        let topColor: UIColor = UIColor(red:0.07, green:0.13, blue:0.26, alpha:1)
-        let bottomColor: UIColor = UIColor(red:0.54, green:0.74, blue:0.74, alpha:1)
+        let topColor: UIColor = UIColor(red:0.949, green:0.737, blue:0.612, alpha:1)
+        let bottomColor: UIColor = UIColor(red:0.239, green:0.286, blue:0.49, alpha:1)
         let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors

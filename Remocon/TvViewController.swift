@@ -22,8 +22,6 @@ class TvViewController: UIViewController {
         self.initGradientBackground()
         self.view.addSubview(tvView)
         self.initNavigationItem()
-
-        if #available(iOS 11, *) { setNeedsUpdateOfHomeIndicatorAutoHidden()  }
     }
 
     override func viewDidLayoutSubviews() {

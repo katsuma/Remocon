@@ -18,7 +18,6 @@ class InputControlViewController: UIViewController {
         super.viewDidLoad()
         self.initBackground()
         self.view.addSubview(inputControlView)
-        if #available(iOS 11, *) { setNeedsUpdateOfHomeIndicatorAutoHidden()  }
     }
 
     override func viewDidLayoutSubviews() {

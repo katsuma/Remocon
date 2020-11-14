@@ -11,7 +11,7 @@ DEPENDENCIES:
   - SwiftSocket (from `https://github.com/swiftsocket/SwiftSocket.git`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Realm
     - RealmSwift
 
@@ -21,14 +21,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftSocket:
-    :commit: 7cd6d8e8464c590e60544b19da769119f10b1ff4
+    :commit: 4a3af2cbbaef5b2fddbaff80f6767fecc0ce5fe2
     :git: https://github.com/swiftsocket/SwiftSocket.git
 
 SPEC CHECKSUMS:
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
-  SwiftSocket: 0847ae35aeba4f64c1ba1fd2b113fdbc4e66de96
+  SwiftSocket: c8d482e867ae4d3eb4c769e9382e123c1f1f833b
 
 PODFILE CHECKSUM: 82d3c472853c121fbbecee224afcf976837da4d3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.0

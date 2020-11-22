@@ -16,8 +16,6 @@ class TvViewController: UIViewController {
 
     @IBOutlet var buttonSetting: UIButton!
 
-    private var isHiddenHomeIndicator: Bool = true
-
     // MARK: - Life cycle events -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,11 +107,6 @@ class TvViewController: UIViewController {
         if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
-    }
-
-    @available(iOS 11, *)
-    override var prefersHomeIndicatorAutoHidden: Bool {
-        return isHiddenHomeIndicator
     }
 }
 

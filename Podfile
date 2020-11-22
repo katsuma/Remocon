@@ -1,7 +1,6 @@
 platform :ios, "9.0"
 use_frameworks!
 target "Remocon" do
-  pod 'RealmSwift', '~> 10.1'
   pod 'SwiftSocket', git: 'https://github.com/swiftsocket/SwiftSocket.git'
 end
 

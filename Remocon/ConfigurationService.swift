@@ -7,13 +7,10 @@
 //
 
 import Foundation
-import RealmSwift
 
 class ConfigurationService {
     static let inputModalChannel: Int = 1261
     static let defaultIremoconAddr: String = "192.168.10.6"
-
-    fileprivate static let realm = try! Realm()
 
     static let channelButtons: [Dictionary<String, String>] = [
         ["label": "1", "channel": "1201"],

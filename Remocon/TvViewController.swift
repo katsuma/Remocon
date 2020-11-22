@@ -28,6 +28,7 @@ class TvViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        self.initGradientBackground()
         self.layoutTvView()
 
         self.tvView.delegate = self
@@ -45,13 +46,22 @@ class TvViewController: UIViewController {
     }
 
     fileprivate func initGradientBackground() {
-        let topColor: UIColor = UIColor(red:0.949, green:0.737, blue:0.612, alpha:1)
-        let bottomColor: UIColor = UIColor(red:0.239, green:0.286, blue:0.49, alpha:1)
+        removeGradientLayer(name: "Background")
+
+        let topColor: UIColor = UIColor(red:0.239, green:0.286, blue:0.49, alpha:1)
+        let bottomColor: UIColor = UIColor(red:0.949, green:0.737, blue:0.612, alpha:1)
         let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
+
         gradientLayer.colors = gradientColors
+        gradientLayer.name = "Background"
         gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
+
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+    fileprivate func removeGradientLayer(name: String) {
+        self.view.layer.sublayers?.first(where: { $0.name == name })?.removeFromSuperlayer()
     }
 
     fileprivate func initNavigationItem() {

@@ -1,7 +1,7 @@
 # Remocon
-Remocon is an iOS app controlling my living room.
+`Remocon` is an app based on Mac Catalyst (iOS, iPadOS and macOS) and controlls my living room.
 
-<img src="./capture.png" width="240" />
+![](./capture.png)
 
 
 ## Build

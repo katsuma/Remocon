@@ -45,8 +45,8 @@ class TvViewController: UIViewController {
     }
 
     fileprivate func initGradientBackground() {
-        let topColor: UIColor = UIColor(red:0.949, green:0.737, blue:0.612, alpha:1)
-        let bottomColor: UIColor = UIColor(red:0.239, green:0.286, blue:0.49, alpha:1)
+        let topColor: UIColor = UIColor(red:0.239, green:0.286, blue:0.49, alpha:1)
+        let bottomColor: UIColor = UIColor(red:0.949, green:0.737, blue:0.612, alpha:1)
         let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors

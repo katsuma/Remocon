@@ -38,6 +38,39 @@ class TvViewController: UIViewController {
         self.checkConnectionReachability()
     }
 
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        let keys = event?.allPresses.compactMap { $0.key?.characters }.filter { $0 != "" }.sorted()
+        let key = keys?.first
+
+        switch key {
+        case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
+            let channel = Int(ConfigurationService.channelButtons.first(where: { $0["label"] == key })!["channel"]!)
+            signal.send(channel!)
+
+        case "+":
+            let channel = Int(ConfigurationService.channelButtons.first(where: { $0["label"] == "plus" })!["channel"]!)
+            signal.send(channel!)
+
+        case "-":
+            let channel = Int(ConfigurationService.channelButtons.first(where: { $0["label"] == "minus" })!["channel"]!)
+            signal.send(channel!)
+
+        case "i", "I":
+            showInputModalView()
+            let channel = Int(ConfigurationService.inputButton["channel"]!)
+            signal.send(channel!)
+
+        case "p", "P":
+            let channel = Int(ConfigurationService.channelButtons.first(where: { $0["label"] == "power" })!["channel"]!)
+            signal.send(channel!)
+
+        case .none:
+            print("None")
+        case .some(_):
+            print("Some")
+        }
+    }
+
     // MARK: - Create subviews -
     fileprivate func createTvView() -> TvView {
         return TvView(frame: .zero)

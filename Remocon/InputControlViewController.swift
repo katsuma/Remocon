@@ -27,6 +27,29 @@ class InputControlViewController: UIViewController {
         self.inputControlView.delegate = self
     }
 
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        let keys = event?.allPresses.compactMap { $0.key?.characters }.filter { $0 != "" }.sorted()
+        let key = keys?.first
+
+        switch key {
+        case "UIKeyInputEscape":
+            self.dismiss(animated: true, completion: nil)
+
+        case "UIKeyInputUpArrow":
+            let channel = Int(ConfigurationService.controlButtons.first(where: { $0["label"] == "up" })!["channel"]!)
+            signal.send(channel!)
+
+        case "UIKeyInputDownArrow":
+            let channel = Int(ConfigurationService.controlButtons.first(where: { $0["label"] == "down" })!["channel"]!)
+            signal.send(channel!)
+
+        case .none:
+            print("None")
+        case .some(_):
+            print("Some")
+        }
+    }
+
     // MARK: - Create subviews -
     fileprivate func createInputControlView() -> InputControlView {
         return InputControlView(frame: CGRect.zero)

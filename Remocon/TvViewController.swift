@@ -14,6 +14,8 @@ class TvViewController: UIViewController {
     lazy fileprivate var tvView: TvView = self.createTvView()
     lazy fileprivate var signal: IremoconSignal = self.createIremoconSignal()
 
+    @IBOutlet var buttonSetting: UIButton!
+
     private var isHiddenHomeIndicator: Bool = true
 
     // MARK: - Life cycle events -
@@ -90,6 +92,13 @@ class TvViewController: UIViewController {
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
+    }
+
+
+    @IBAction func showSettingView(_ sender: Any) {
+        if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 
     @available(iOS 11, *)

@@ -11,6 +11,8 @@ import RealmSwift
 
 class ConfigurationService {
     static let inputModalChannel: Int = 1261
+    static let defaultIremoconAddr: String = "192.168.10.6"
+
     fileprivate static let realm = try! Realm()
 
     static let channelButtons: [Dictionary<String, String>] = [
@@ -46,32 +48,20 @@ class ConfigurationService {
     ]
 
     static var iRemocon: Dictionary<String, String> = [
-        "address": loadRemoconAddress()!,
+        "address": getRemoconAddr(),
         "port": "51013"
     ]
 
-    fileprivate static func loadRemoconAddress() -> String? {
-        if let localSetting: LocalSetting = realm.objects(LocalSetting.self).last {
-            return localSetting.remoconAddress;
+    static func getRemoconAddr() -> String {
+        if let addr = UserDefaults.standard.string(forKey: "iremocon_addr") {
+            return addr
         } else {
-            let localSetting: LocalSetting = LocalSetting()
-            try! realm.write {
-                realm.add(localSetting)
-            }
-            return localSetting.remoconAddress;
+            UserDefaults.standard.setValue(defaultIremoconAddr, forKey: "iremocon_addr")
+            return defaultIremoconAddr
         }
     }
 
-    static func updateRemoconAddress(address: String) {
-        if address == iRemocon["address"] {
-            return
-        }
-
-        let localSetting: LocalSetting? = realm.objects(LocalSetting.self).last
-        try! realm.write {
-            localSetting?.remoconAddress = address
-            iRemocon["address"] = address
-            IremoconSignal.sharedInstance.updateTCPClient()
-        }
+    public static func updateRemoconAddr() -> Void {
+        iRemocon["address"] = getRemoconAddr()        
     }
 }

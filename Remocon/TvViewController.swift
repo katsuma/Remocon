@@ -112,7 +112,7 @@ class TvViewController: UIViewController {
     fileprivate func showInputModalView() {
         let inputControlViewController: UINavigationController = UINavigationController(rootViewController: InputControlViewController())
         inputControlViewController.modalTransitionStyle = .coverVertical
-        inputControlViewController.modalPresentationStyle = .overFullScreen
+        inputControlViewController.modalPresentationStyle = .popover
         self.present(inputControlViewController, animated: true, completion: nil)
     }
 

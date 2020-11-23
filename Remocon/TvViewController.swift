@@ -79,11 +79,20 @@ class TvViewController: UIViewController {
     fileprivate func initGradientBackground() {
         removeGradientLayer(name: "Background")
 
-        let topColor: UIColor = UIColor(red:0.239, green:0.286, blue:0.49, alpha:1)
-        let bottomColor: UIColor = UIColor(red:0.949, green:0.737, blue:0.612, alpha:1)
-        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        let lightTopColor: UIColor = UIColor(red:0.144, green:0.543, blue:0.72, alpha:1)
+        let lightBottomColor: UIColor = UIColor(red: 0.778, green: 0.859, blue: 0.941, alpha:1)
+        let darkTopColor: UIColor = UIColor(red:0.793, green:0.238, blue:0.445, alpha:1)
+        let darkBottomColor: UIColor = UIColor(red:0.222, green:0.293, blue:0.480, alpha:1)
 
+        var gradientColors: [CGColor]
+
+        if traitCollection.userInterfaceStyle == .light {
+            gradientColors = [lightTopColor.cgColor, lightBottomColor.cgColor]
+        } else {
+            gradientColors = [darkTopColor.cgColor, darkBottomColor.cgColor]
+        }
+
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.name = "Background"
         gradientLayer.frame = self.view.bounds

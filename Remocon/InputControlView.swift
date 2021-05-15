@@ -66,7 +66,7 @@ class InputControlView: UIView {
     }
 }
 
-protocol InputControlViewDelegate: class {
+protocol InputControlViewDelegate: AnyObject {
     func buttonDidTap(_ channel: Int, sender: InputControlView)
 }
 

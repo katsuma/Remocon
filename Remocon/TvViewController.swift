@@ -120,8 +120,13 @@ class TvViewController: UIViewController {
 
     fileprivate func showInputModalView() {
         let inputControlViewController: UINavigationController = UINavigationController(rootViewController: InputControlViewController())
-        inputControlViewController.modalTransitionStyle = .coverVertical
-        inputControlViewController.modalPresentationStyle = .popover
+        if (UIDevice.current.model == "iPad") {
+            inputControlViewController.modalTransitionStyle = .crossDissolve
+        } else {
+            inputControlViewController.modalTransitionStyle = .coverVertical
+        }
+
+        inputControlViewController.modalPresentationStyle = .pageSheet
         self.present(inputControlViewController, animated: true, completion: nil)
     }
 

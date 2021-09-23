@@ -87,7 +87,7 @@ class TvView: UIView {
 
 }
 
-protocol TvViewDelegate: class {
+protocol TvViewDelegate: AnyObject {
     func buttonDidTap(_ channel: Int, sender: TvView)
 }
 
